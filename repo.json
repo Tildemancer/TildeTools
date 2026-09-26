@@ -1,0 +1,29 @@
+[
+  {
+    "Author": "Tildemancer",
+    "Name": "TildeTools",
+    "InternalName": "TildeTools",
+    "AssemblyVersion": "0.5.0.0",
+    "Description": "A collection of tools under one window, each with its own tab and master switch. Includes Emote Splitter, which raises the chat box's length limit and sends long messages as paced parts so the server does not drop them, and spellcheck.",
+    "Punchline": "A box of small tools, each switched on or off on its own.",
+    "ApplicableVersion": "any",
+    "Tags": [
+      "Social",
+      "Utility",
+      "Roleplay"
+    ],
+    "DalamudApiLevel": 15,
+    "LoadRequiredState": 0,
+    "LoadSync": false,
+    "CanUnloadAsync": false,
+    "LoadPriority": 0,
+    "AcceptsFeedback": false,
+    "IsHide": false,
+    "IsTestingExclusive": false,
+    "RepoUrl": "https://github.com/Tildemancer/TildeTools",
+    "IconUrl": "https://raw.githubusercontent.com/Tildemancer/TildeTools/master/TildeTools/images/icon.png",
+    "DownloadLinkInstall": "https://github.com/Tildemancer/TildeTools/releases/latest/download/latest.zip",
+    "DownloadLinkUpdate": "https://github.com/Tildemancer/TildeTools/releases/latest/download/latest.zip",
+    "DownloadLinkTesting": "https://github.com/Tildemancer/TildeTools/releases/latest/download/latest.zip"
+  }
+]

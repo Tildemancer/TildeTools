@@ -1,0 +1,233 @@
+# Chat shorthand and roleplay terms, TildeTools' own.
+# The spellchecker accepts every spelling here in any case and never suggests one as a correction.
+# Define shows these meanings first, before Wiktionary's, and an entry with none shows Wiktionary's alone.
+# An entry: its spellings on one line, comma separated, then each meaning on its own line
+# indented two spaces, as "part of speech: meaning".
+#
+# Claude, an AI made by Anthropic, wrote the meanings in this file and the notes marked Claude.
+# These are the words a spellchecker gets wrong in FFXIV chat. They aren't misspellings, just
+# words no dictionary expects: roleplay shorthand, game jargon, chat abbreviations, a few sounds,
+# and some rare words writers love. They're never offered as corrections, because a typo should
+# never be "fixed" into "lmao". ABOUT-CLAUDE.txt beside this file says where the rest of the
+# lexicon comes from.
+
+# Roleplay
+# Claude: IC and OOC matter most here. Left out, they'd be underlined in nearly every RP line.
+
+RP, rp
+  abbreviation: Roleplay.
+  verb: To roleplay.
+RPer, rper, RPers, rpers
+  noun: A roleplayer.
+RPing, rping, RPed, rped
+  verb: Roleplaying, roleplayed.
+roleplaying, roleplayed, roleplayer, roleplayers
+  verb: Taking part in a roleplay, playing a character.
+  noun: Someone who roleplays.
+IC, ic
+  abbreviation: In character: said or done as your character, inside the story.
+OOC, ooc
+  abbreviation: Out of character: said or done as yourself, outside the story.
+ERP, erp
+  abbreviation: Erotic roleplay.
+NPC, npc, NPCs, npcs
+  abbreviation: Non-player character: a character run by the game, not a player.
+PC, pc, PCs, pcs
+  abbreviation: Player character: a character run by a player.
+LFRP, lfrp
+  abbreviation: Looking for roleplay.
+godmodding, godmod, godmode
+  noun: Controlling another player's character, or making your own impossible to affect, without their agreement.
+metagaming, metagame
+  noun: Using what you know out of character to act in character.
+
+# Games
+# Claude: the all-capitals ones, MSQ, PF, FC, LS and DC, have to be listed here. The game's own
+# text never teaches them, because the game-word reader skips anything without a lowercase letter.
+
+DPS, dps
+  abbreviation: Damage per second. A measurement of damage dealt per second by an individual.
+  noun: A type of class or job specialized in dealing damage.
+AoE, aoe, AOE
+  abbreviation: Area of effect: an attack or spell that hits everything in an area.
+HP, hp
+  abbreviation: Hit points: how much damage a character can take.
+MP, mp
+  abbreviation: Magic points: what a character spends to cast spells.
+GCD, gcd
+  abbreviation: Global cooldown: the shared wait between most actions.
+CD, cd
+  abbreviation: Cooldown: the wait before an ability can be used again.
+ilvl, iLvl
+  abbreviation: Item level: how strong a piece of gear is.
+MMO, mmo, MMORPG, mmorpg
+  abbreviation: Massively multiplayer online (role-playing) game.
+GM, gm
+  abbreviation: Game master: someone running the game or the story.
+  abbreviation: Good morning.
+DM, dm
+  abbreviation: Direct message: a private message.
+  abbreviation: Dungeon master: someone running a tabletop game.
+PM, pm
+  abbreviation: Private message.
+MSQ, msq
+  abbreviation: Main scenario quest: FFXIV's main story.
+PF, pf
+  abbreviation: Party Finder.
+FC, fc
+  abbreviation: Free Company: FFXIV's guilds.
+LS, ls, CWLS, cwls
+  abbreviation: Linkshell, cross-world linkshell: FFXIV's chat channels.
+LB, lb
+  abbreviation: Limit break.
+DC, dc
+  abbreviation: Data Center: a group of FFXIV worlds.
+  verb: To disconnect.
+GG, gg, GGs, ggs
+  abbreviation: Good game.
+ez
+  adjective: Easy.
+
+# Chat
+# Claude: the meanings spell the swears out in full on purpose. Define is there to say what an
+# abbreviation stands for, and "lmao" stands for what it stands for.
+
+lol, LOL
+  abbreviation: Laughing out loud.
+lmao, LMAO
+  abbreviation: Laughing my ass off.
+lmfao, LMFAO
+  abbreviation: Laughing my fucking ass off.
+rofl, ROFL
+  abbreviation: Rolling on the floor laughing.
+omg, OMG
+  abbreviation: Oh my god.
+omfg, OMFG
+  abbreviation: Oh my fucking god.
+wtf, WTF
+  abbreviation: What the fuck.
+ffs
+  abbreviation: For fuck's sake.
+brb
+  abbreviation: Be right back.
+bbl
+  abbreviation: Be back later.
+bbiab
+  abbreviation: Be back in a bit.
+afk, AFK
+  abbreviation: Away from keyboard.
+irl, IRL
+  abbreviation: In real life.
+tbh
+  abbreviation: To be honest.
+tbf
+  abbreviation: To be fair.
+ngl
+  abbreviation: Not gonna lie.
+ikr
+  abbreviation: I know, right?
+smh
+  abbreviation: Shaking my head.
+idk
+  abbreviation: I don't know.
+idc
+  abbreviation: I don't care.
+imo, imho
+  abbreviation: In my opinion, in my humble opinion.
+iirc
+  abbreviation: If I remember correctly.
+afaik
+  abbreviation: As far as I know.
+btw
+  abbreviation: By the way.
+fyi
+  abbreviation: For your information.
+ty, tysm, tyvm
+  abbreviation: Thank you, thank you so much, thank you very much.
+thx
+  abbreviation: Thanks.
+np
+  abbreviation: No problem.
+yw
+  abbreviation: You're welcome.
+nvm
+  abbreviation: Never mind.
+jk
+  abbreviation: Just kidding.
+ttyl
+  abbreviation: Talk to you later.
+gn, gnight
+  abbreviation: Good night.
+wb
+  abbreviation: Welcome back.
+ofc
+  abbreviation: Of course.
+pls, plz
+  adverb: Please.
+ppl
+  noun: People.
+rn
+  abbreviation: Right now.
+tho
+  conjunction: Though.
+hbu, wbu
+  abbreviation: How about you, what about you.
+wyd
+  abbreviation: What are you doing?
+hmu
+  abbreviation: Hit me up: get in touch.
+ily
+  abbreviation: I love you.
+tfw
+  abbreviation: That feeling when.
+ftw
+  abbreviation: For the win.
+nsfw, NSFW
+  abbreviation: Not safe for work.
+xD, xd
+  interjection: A laughing face.
+uwu, UwU
+  interjection: A cute face, fond or pleased.
+owo, OwO
+  interjection: A cute face, curious or surprised.
+
+# Sounds and words chat uses
+# Claude: yes, boop gets a noun and a verb. Both see plenty of use.
+
+mhm
+  interjection: Yes, or I'm listening.
+welp
+  interjection: Well, in resignation.
+okie, kk
+  interjection: Okay.
+boop, boops, booped, booping
+  noun: A light tap on the nose.
+  verb: To tap someone lightly on the nose.
+headpat, headpats
+  noun: A pat on the head.
+smol
+  adjective: Small, and cute for it.
+yeet, yeeted, yeeting
+  verb: To throw with force.
+  interjection: An exclamation of excitement.
+simp, simps, simping
+  noun: Someone who dotes on another to excess.
+  verb: To dote on someone to excess.
+
+# Writers' words: rare but real, which the spelling lists leave out.
+# No meanings of our own, Define shows Wiktionary's.
+# Claude: petrichor is the smell of rain on dry ground, and sonder the sudden sense that every
+# passer-by has a life as full as your own. The spelling lists leave words like these out.
+# Roleplayers don't.
+
+petrichor
+sonder
+limerence
+apricity
+vellichor
+hiraeth
+saudade
+callipygian
+vespertine
+vambrace, vambraces
+doomscrolling

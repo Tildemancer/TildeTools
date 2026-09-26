@@ -1,0 +1,8 @@
+
+# Dictionary data, kept byte-for-byte
+# Hunspell reads the word count from the first line, so line endings aren't ours to rewrite on checkout
+TildeTools/Dictionaries/*.dic -text
+TildeTools/Dictionaries/*.aff -text
+
+# Lexicon data, binary-searched on disk by byte offset, so line endings stay as built
+TildeTools/Lexicon/*.tsv -text

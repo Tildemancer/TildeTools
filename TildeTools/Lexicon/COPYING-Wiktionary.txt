@@ -1,0 +1,9 @@
+definitions.tsv, and the synonyms in synonyms.tsv that WordNet lacks, come from the
+English Wiktionary (https://en.wiktionary.org/), written by its contributors, through
+kaikki.org's wiktextract extract (https://kaikki.org/) of 20 September 2026.
+
+Used under the Creative Commons Attribution-ShareAlike 4.0 International License
+(https://creativecommons.org/licenses/by-sa/4.0/), and shared under the same licence.
+
+Changed here: English entries only, for words the spellchecker accepts; each sense's
+last gloss; reformatted as tab-separated lines.

@@ -1,0 +1,1388 @@
+{
+  "$type" : "ChatTwo.Configuration, ChatTwo",
+  "BlockedEmotes" : [],
+  "CanMove" : true,
+  "CanResize" : true,
+  "ChatColours" : {
+    "$type" : "System.Collections.Generic.Dictionary`2[[ChatTwo.Code.ChatType, ChatTwo],[System.UInt32, System.Private.CoreLib]], System.Private.CoreLib",
+    "Alliance" : 4283434495,
+    "CrossLinkshell1" : 4294733311,
+    "CrossLinkshell2" : 1738071039,
+    "CrossLinkshell3" : 2883315199,
+    "CustomEmote" : 4052882175,
+    "Error" : 3557040383,
+    "FreeCompany" : 1356728831,
+    "Party" : 100139007,
+    "PvpTeam" : 3853233151,
+    "Shout" : 4278190335,
+    "StandardEmote" : 4052882175
+  },
+  "ChatTabBackward" : null,
+  "ChatTabForward" : null,
+  "ChosenStyle" : null,
+  "CollapseDuplicateMessages" : true,
+  "CollapseKeepUniqueLinks" : true,
+  "CommandHelpSide" : 0,
+  "DatabaseBattleMessages" : false,
+  "DatabaseGatherCraftMessages" : false,
+  "ExtraGlyphRanges" : 127,
+  "FilterIncludePreviousSessions" : true,
+  "FontSizeV2" : 14,
+  "FontsEnabled" : false,
+  "GlobalFontV2" : {
+    "$type" : "Dalamud.Interface.FontIdentifier.SingleFontSpec, Dalamud",
+    "FontId" : {
+      "$type" : "Dalamud.Interface.FontIdentifier.DalamudAssetFontAndFamilyId, Dalamud",
+      "Asset" : 2001
+    },
+    "FontNo" : 0,
+    "GlyphOffset" : {
+      "$type" : "System.Numerics.Vector2, System.Private.CoreLib",
+      "X" : 0,
+      "Y" : 0
+    },
+    "GlyphRanges" : null,
+    "LetterSpacing" : 0,
+    "LineHeight" : 1,
+    "SizePx" : 17
+  },
+  "HideChat" : true,
+  "HideDuringCutscenes" : true,
+  "HideInBattle" : false,
+  "HideInLoadingScreens" : false,
+  "HideSameTimestamps" : true,
+  "HideWhenInactive" : false,
+  "HideWhenNotLoggedIn" : true,
+  "HideWhenUiHidden" : true,
+  "InactivityHideActiveDuringBattle" : true,
+  "InactivityHideChannels" : {
+    "$type" : "System.Collections.Generic.Dictionary`2[[ChatTwo.Code.ChatType, ChatTwo],[ChatTwo.Code.ChatSource, ChatTwo]], System.Private.CoreLib"
+  },
+  "InactivityHideChannelsV2" : {
+    "$type" : "System.Collections.Generic.Dictionary`2[[ChatTwo.Code.ChatType, ChatTwo],[System.ValueTuple`2[[ChatTwo.Code.ChatSource, ChatTwo],[ChatTwo.Code.ChatSource, ChatTwo]], System.Private.CoreLib]], System.Private.CoreLib",
+    "Alarm" : {
+      "$type" : "System.ValueTuple`2[[ChatTwo.Code.ChatSource, ChatTwo],[ChatTwo.Code.ChatSource, ChatTwo]], System.Private.CoreLib",
+      "Item1" : 4094,
+      "Item2" : 4094
+    },
+    "Alliance" : {
+      "$type" : "System.ValueTuple`2[[ChatTwo.Code.ChatSource, ChatTwo],[ChatTwo.Code.ChatSource, ChatTwo]], System.Private.CoreLib",
+      "Item1" : 4094,
+      "Item2" : 4094
+    },
+    "CrossLinkshell1" : {
+      "$type" : "System.ValueTuple`2[[ChatTwo.Code.ChatSource, ChatTwo],[ChatTwo.Code.ChatSource, ChatTwo]], System.Private.CoreLib",
+      "Item1" : 4094,
+      "Item2" : 4094
+    },
+    "CrossLinkshell2" : {
+      "$type" : "System.ValueTuple`2[[ChatTwo.Code.ChatSource, ChatTwo],[ChatTwo.Code.ChatSource, ChatTwo]], System.Private.CoreLib",
+      "Item1" : 4094,
+      "Item2" : 4094
+    },
+    "CrossLinkshell3" : {
+      "$type" : "System.ValueTuple`2[[ChatTwo.Code.ChatSource, ChatTwo],[ChatTwo.Code.ChatSource, ChatTwo]], System.Private.CoreLib",
+      "Item1" : 4094,
+      "Item2" : 4094
+    },
+    "CrossLinkshell4" : {
+      "$type" : "System.ValueTuple`2[[ChatTwo.Code.ChatSource, ChatTwo],[ChatTwo.Code.ChatSource, ChatTwo]], System.Private.CoreLib",
+      "Item1" : 4094,
+      "Item2" : 4094
+    },
+    "CrossLinkshell5" : {
+      "$type" : "System.ValueTuple`2[[ChatTwo.Code.ChatSource, ChatTwo],[ChatTwo.Code.ChatSource, ChatTwo]], System.Private.CoreLib",
+      "Item1" : 4094,
+      "Item2" : 4094
+    },
+    "CrossLinkshell6" : {
+      "$type" : "System.ValueTuple`2[[ChatTwo.Code.ChatSource, ChatTwo],[ChatTwo.Code.ChatSource, ChatTwo]], System.Private.CoreLib",
+      "Item1" : 4094,
+      "Item2" : 4094
+    },
+    "CrossLinkshell7" : {
+      "$type" : "System.ValueTuple`2[[ChatTwo.Code.ChatSource, ChatTwo],[ChatTwo.Code.ChatSource, ChatTwo]], System.Private.CoreLib",
+      "Item1" : 4094,
+      "Item2" : 4094
+    },
+    "CrossLinkshell8" : {
+      "$type" : "System.ValueTuple`2[[ChatTwo.Code.ChatSource, ChatTwo],[ChatTwo.Code.ChatSource, ChatTwo]], System.Private.CoreLib",
+      "Item1" : 4094,
+      "Item2" : 4094
+    },
+    "CrossParty" : {
+      "$type" : "System.ValueTuple`2[[ChatTwo.Code.ChatSource, ChatTwo],[ChatTwo.Code.ChatSource, ChatTwo]], System.Private.CoreLib",
+      "Item1" : 4094,
+      "Item2" : 4094
+    },
+    "CustomEmote" : {
+      "$type" : "System.ValueTuple`2[[ChatTwo.Code.ChatSource, ChatTwo],[ChatTwo.Code.ChatSource, ChatTwo]], System.Private.CoreLib",
+      "Item1" : 4094,
+      "Item2" : 4094
+    },
+    "ExtraChatLinkshell1" : {
+      "$type" : "System.ValueTuple`2[[ChatTwo.Code.ChatSource, ChatTwo],[ChatTwo.Code.ChatSource, ChatTwo]], System.Private.CoreLib",
+      "Item1" : 4094,
+      "Item2" : 4094
+    },
+    "ExtraChatLinkshell2" : {
+      "$type" : "System.ValueTuple`2[[ChatTwo.Code.ChatSource, ChatTwo],[ChatTwo.Code.ChatSource, ChatTwo]], System.Private.CoreLib",
+      "Item1" : 4094,
+      "Item2" : 4094
+    },
+    "ExtraChatLinkshell3" : {
+      "$type" : "System.ValueTuple`2[[ChatTwo.Code.ChatSource, ChatTwo],[ChatTwo.Code.ChatSource, ChatTwo]], System.Private.CoreLib",
+      "Item1" : 4094,
+      "Item2" : 4094
+    },
+    "ExtraChatLinkshell4" : {
+      "$type" : "System.ValueTuple`2[[ChatTwo.Code.ChatSource, ChatTwo],[ChatTwo.Code.ChatSource, ChatTwo]], System.Private.CoreLib",
+      "Item1" : 4094,
+      "Item2" : 4094
+    },
+    "ExtraChatLinkshell5" : {
+      "$type" : "System.ValueTuple`2[[ChatTwo.Code.ChatSource, ChatTwo],[ChatTwo.Code.ChatSource, ChatTwo]], System.Private.CoreLib",
+      "Item1" : 4094,
+      "Item2" : 4094
+    },
+    "ExtraChatLinkshell6" : {
+      "$type" : "System.ValueTuple`2[[ChatTwo.Code.ChatSource, ChatTwo],[ChatTwo.Code.ChatSource, ChatTwo]], System.Private.CoreLib",
+      "Item1" : 4094,
+      "Item2" : 4094
+    },
+    "ExtraChatLinkshell7" : {
+      "$type" : "System.ValueTuple`2[[ChatTwo.Code.ChatSource, ChatTwo],[ChatTwo.Code.ChatSource, ChatTwo]], System.Private.CoreLib",
+      "Item1" : 4094,
+      "Item2" : 4094
+    },
+    "ExtraChatLinkshell8" : {
+      "$type" : "System.ValueTuple`2[[ChatTwo.Code.ChatSource, ChatTwo],[ChatTwo.Code.ChatSource, ChatTwo]], System.Private.CoreLib",
+      "Item1" : 4094,
+      "Item2" : 4094
+    },
+    "FreeCompany" : {
+      "$type" : "System.ValueTuple`2[[ChatTwo.Code.ChatSource, ChatTwo],[ChatTwo.Code.ChatSource, ChatTwo]], System.Private.CoreLib",
+      "Item1" : 4094,
+      "Item2" : 4094
+    },
+    "GmFreeCompany" : {
+      "$type" : "System.ValueTuple`2[[ChatTwo.Code.ChatSource, ChatTwo],[ChatTwo.Code.ChatSource, ChatTwo]], System.Private.CoreLib",
+      "Item1" : 4094,
+      "Item2" : 4094
+    },
+    "GmLinkshell1" : {
+      "$type" : "System.ValueTuple`2[[ChatTwo.Code.ChatSource, ChatTwo],[ChatTwo.Code.ChatSource, ChatTwo]], System.Private.CoreLib",
+      "Item1" : 4094,
+      "Item2" : 4094
+    },
+    "GmLinkshell2" : {
+      "$type" : "System.ValueTuple`2[[ChatTwo.Code.ChatSource, ChatTwo],[ChatTwo.Code.ChatSource, ChatTwo]], System.Private.CoreLib",
+      "Item1" : 4094,
+      "Item2" : 4094
+    },
+    "GmLinkshell3" : {
+      "$type" : "System.ValueTuple`2[[ChatTwo.Code.ChatSource, ChatTwo],[ChatTwo.Code.ChatSource, ChatTwo]], System.Private.CoreLib",
+      "Item1" : 4094,
+      "Item2" : 4094
+    },
+    "GmLinkshell4" : {
+      "$type" : "System.ValueTuple`2[[ChatTwo.Code.ChatSource, ChatTwo],[ChatTwo.Code.ChatSource, ChatTwo]], System.Private.CoreLib",
+      "Item1" : 4094,
+      "Item2" : 4094
+    },
+    "GmLinkshell5" : {
+      "$type" : "System.ValueTuple`2[[ChatTwo.Code.ChatSource, ChatTwo],[ChatTwo.Code.ChatSource, ChatTwo]], System.Private.CoreLib",
+      "Item1" : 4094,
+      "Item2" : 4094
+    },
+    "GmLinkshell6" : {
+      "$type" : "System.ValueTuple`2[[ChatTwo.Code.ChatSource, ChatTwo],[ChatTwo.Code.ChatSource, ChatTwo]], System.Private.CoreLib",
+      "Item1" : 4094,
+      "Item2" : 4094
+    },
+    "GmLinkshell7" : {
+      "$type" : "System.ValueTuple`2[[ChatTwo.Code.ChatSource, ChatTwo],[ChatTwo.Code.ChatSource, ChatTwo]], System.Private.CoreLib",
+      "Item1" : 4094,
+      "Item2" : 4094
+    },
+    "GmLinkshell8" : {
+      "$type" : "System.ValueTuple`2[[ChatTwo.Code.ChatSource, ChatTwo],[ChatTwo.Code.ChatSource, ChatTwo]], System.Private.CoreLib",
+      "Item1" : 4094,
+      "Item2" : 4094
+    },
+    "GmNoviceNetwork" : {
+      "$type" : "System.ValueTuple`2[[ChatTwo.Code.ChatSource, ChatTwo],[ChatTwo.Code.ChatSource, ChatTwo]], System.Private.CoreLib",
+      "Item1" : 4094,
+      "Item2" : 4094
+    },
+    "GmParty" : {
+      "$type" : "System.ValueTuple`2[[ChatTwo.Code.ChatSource, ChatTwo],[ChatTwo.Code.ChatSource, ChatTwo]], System.Private.CoreLib",
+      "Item1" : 4094,
+      "Item2" : 4094
+    },
+    "GmSay" : {
+      "$type" : "System.ValueTuple`2[[ChatTwo.Code.ChatSource, ChatTwo],[ChatTwo.Code.ChatSource, ChatTwo]], System.Private.CoreLib",
+      "Item1" : 4094,
+      "Item2" : 4094
+    },
+    "GmShout" : {
+      "$type" : "System.ValueTuple`2[[ChatTwo.Code.ChatSource, ChatTwo],[ChatTwo.Code.ChatSource, ChatTwo]], System.Private.CoreLib",
+      "Item1" : 4094,
+      "Item2" : 4094
+    },
+    "GmTell" : {
+      "$type" : "System.ValueTuple`2[[ChatTwo.Code.ChatSource, ChatTwo],[ChatTwo.Code.ChatSource, ChatTwo]], System.Private.CoreLib",
+      "Item1" : 4094,
+      "Item2" : 4094
+    },
+    "GmYell" : {
+      "$type" : "System.ValueTuple`2[[ChatTwo.Code.ChatSource, ChatTwo],[ChatTwo.Code.ChatSource, ChatTwo]], System.Private.CoreLib",
+      "Item1" : 4094,
+      "Item2" : 4094
+    },
+    "Linkshell1" : {
+      "$type" : "System.ValueTuple`2[[ChatTwo.Code.ChatSource, ChatTwo],[ChatTwo.Code.ChatSource, ChatTwo]], System.Private.CoreLib",
+      "Item1" : 4094,
+      "Item2" : 4094
+    },
+    "Linkshell2" : {
+      "$type" : "System.ValueTuple`2[[ChatTwo.Code.ChatSource, ChatTwo],[ChatTwo.Code.ChatSource, ChatTwo]], System.Private.CoreLib",
+      "Item1" : 4094,
+      "Item2" : 4094
+    },
+    "Linkshell3" : {
+      "$type" : "System.ValueTuple`2[[ChatTwo.Code.ChatSource, ChatTwo],[ChatTwo.Code.ChatSource, ChatTwo]], System.Private.CoreLib",
+      "Item1" : 4094,
+      "Item2" : 4094
+    },
+    "Linkshell4" : {
+      "$type" : "System.ValueTuple`2[[ChatTwo.Code.ChatSource, ChatTwo],[ChatTwo.Code.ChatSource, ChatTwo]], System.Private.CoreLib",
+      "Item1" : 4094,
+      "Item2" : 4094
+    },
+    "Linkshell5" : {
+      "$type" : "System.ValueTuple`2[[ChatTwo.Code.ChatSource, ChatTwo],[ChatTwo.Code.ChatSource, ChatTwo]], System.Private.CoreLib",
+      "Item1" : 4094,
+      "Item2" : 4094
+    },
+    "Linkshell6" : {
+      "$type" : "System.ValueTuple`2[[ChatTwo.Code.ChatSource, ChatTwo],[ChatTwo.Code.ChatSource, ChatTwo]], System.Private.CoreLib",
+      "Item1" : 4094,
+      "Item2" : 4094
+    },
+    "Linkshell7" : {
+      "$type" : "System.ValueTuple`2[[ChatTwo.Code.ChatSource, ChatTwo],[ChatTwo.Code.ChatSource, ChatTwo]], System.Private.CoreLib",
+      "Item1" : 4094,
+      "Item2" : 4094
+    },
+    "Linkshell8" : {
+      "$type" : "System.ValueTuple`2[[ChatTwo.Code.ChatSource, ChatTwo],[ChatTwo.Code.ChatSource, ChatTwo]], System.Private.CoreLib",
+      "Item1" : 4094,
+      "Item2" : 4094
+    },
+    "MessageBook" : {
+      "$type" : "System.ValueTuple`2[[ChatTwo.Code.ChatSource, ChatTwo],[ChatTwo.Code.ChatSource, ChatTwo]], System.Private.CoreLib",
+      "Item1" : 4094,
+      "Item2" : 4094
+    },
+    "Notice" : {
+      "$type" : "System.ValueTuple`2[[ChatTwo.Code.ChatSource, ChatTwo],[ChatTwo.Code.ChatSource, ChatTwo]], System.Private.CoreLib",
+      "Item1" : 4094,
+      "Item2" : 4094
+    },
+    "Party" : {
+      "$type" : "System.ValueTuple`2[[ChatTwo.Code.ChatSource, ChatTwo],[ChatTwo.Code.ChatSource, ChatTwo]], System.Private.CoreLib",
+      "Item1" : 4094,
+      "Item2" : 4094
+    },
+    "PvpTeam" : {
+      "$type" : "System.ValueTuple`2[[ChatTwo.Code.ChatSource, ChatTwo],[ChatTwo.Code.ChatSource, ChatTwo]], System.Private.CoreLib",
+      "Item1" : 4094,
+      "Item2" : 4094
+    },
+    "Say" : {
+      "$type" : "System.ValueTuple`2[[ChatTwo.Code.ChatSource, ChatTwo],[ChatTwo.Code.ChatSource, ChatTwo]], System.Private.CoreLib",
+      "Item1" : 4094,
+      "Item2" : 4094
+    },
+    "Shout" : {
+      "$type" : "System.ValueTuple`2[[ChatTwo.Code.ChatSource, ChatTwo],[ChatTwo.Code.ChatSource, ChatTwo]], System.Private.CoreLib",
+      "Item1" : 4094,
+      "Item2" : 4094
+    },
+    "StandardEmote" : {
+      "$type" : "System.ValueTuple`2[[ChatTwo.Code.ChatSource, ChatTwo],[ChatTwo.Code.ChatSource, ChatTwo]], System.Private.CoreLib",
+      "Item1" : 4094,
+      "Item2" : 4094
+    },
+    "TellIncoming" : {
+      "$type" : "System.ValueTuple`2[[ChatTwo.Code.ChatSource, ChatTwo],[ChatTwo.Code.ChatSource, ChatTwo]], System.Private.CoreLib",
+      "Item1" : 4094,
+      "Item2" : 4094
+    },
+    "TellOutgoing" : {
+      "$type" : "System.ValueTuple`2[[ChatTwo.Code.ChatSource, ChatTwo],[ChatTwo.Code.ChatSource, ChatTwo]], System.Private.CoreLib",
+      "Item1" : 4094,
+      "Item2" : 4094
+    },
+    "Urgent" : {
+      "$type" : "System.ValueTuple`2[[ChatTwo.Code.ChatSource, ChatTwo],[ChatTwo.Code.ChatSource, ChatTwo]], System.Private.CoreLib",
+      "Item1" : 4094,
+      "Item2" : 4094
+    },
+    "Yell" : {
+      "$type" : "System.ValueTuple`2[[ChatTwo.Code.ChatSource, ChatTwo],[ChatTwo.Code.ChatSource, ChatTwo]], System.Private.CoreLib",
+      "Item1" : 4094,
+      "Item2" : 4094
+    }
+  },
+  "InactivityHideExtraChatAll" : true,
+  "InactivityHideExtraChatChannels" : [],
+  "InactivityHideTimeout" : 2,
+  "ItalicEnabled" : false,
+  "ItalicFontV2" : {
+    "$type" : "Dalamud.Interface.FontIdentifier.SingleFontSpec, Dalamud",
+    "FontId" : {
+      "$type" : "Dalamud.Interface.FontIdentifier.DalamudAssetFontAndFamilyId, Dalamud",
+      "Asset" : 2001
+    },
+    "FontNo" : 0,
+    "GlyphOffset" : {
+      "$type" : "System.Numerics.Vector2, System.Private.CoreLib",
+      "X" : 0,
+      "Y" : 0
+    },
+    "GlyphRanges" : null,
+    "LetterSpacing" : 0,
+    "LineHeight" : 1,
+    "SizePx" : 17
+  },
+  "JapaneseFontV2" : {
+    "$type" : "Dalamud.Interface.FontIdentifier.SingleFontSpec, Dalamud",
+    "FontId" : {
+      "$type" : "Dalamud.Interface.FontIdentifier.DalamudAssetFontAndFamilyId, Dalamud",
+      "Asset" : 2000
+    },
+    "FontNo" : 0,
+    "GlyphOffset" : {
+      "$type" : "System.Numerics.Vector2, System.Private.CoreLib",
+      "X" : 0,
+      "Y" : 0
+    },
+    "GlyphRanges" : null,
+    "LetterSpacing" : 0,
+    "LineHeight" : 1,
+    "SizePx" : 17
+  },
+  "KeepInputFocus" : true,
+  "KeybindMode" : 0,
+  "LanguageOverride" : 0,
+  "LoadPreviousSession" : true,
+  "MaxLinesToRender" : 10000,
+  "MigrationStatus" : 0,
+  "MoreCompactPretty" : true,
+  "NativeItemTooltips" : true,
+  "OnlyPreviewIf" : false,
+  "OverrideStyle" : false,
+  "PlaySounds" : true,
+  "PrettierTimestamps" : true,
+  "PreviewMinimum" : 1,
+  "PreviewPosition" : 2,
+  "PrintChangelog" : true,
+  "ShowEmotes" : false,
+  "ShowHideButton" : true,
+  "ShowNoviceNetwork" : true,
+  "ShowPopOutTitleBar" : true,
+  "ShowTitleBar" : false,
+  "SidebarTabView" : true,
+  "SortAutoTranslate" : true,
+  "SymbolsFontSizeV2" : 14,
+  "Tabs" : [
+    {
+      "$type" : "ChatTwo.Tab, ChatTwo",
+      "AllSenderMessages" : false,
+      "CanMove" : true,
+      "CanResize" : true,
+      "Channel" : null,
+      "ChatCodes" : {
+        "$type" : "System.Collections.Generic.Dictionary`2[[ChatTwo.Code.ChatType, ChatTwo],[ChatTwo.Code.ChatSource, ChatTwo]], System.Private.CoreLib"
+      },
+      "DisplayTimestamp" : true,
+      "ExtraChatAll" : false,
+      "ExtraChatChannels" : [],
+      "HideDuringCutscenes" : true,
+      "HideInBattle" : false,
+      "HideInLoadingScreens" : false,
+      "HideWhenInactive" : false,
+      "HideWhenNotLoggedIn" : true,
+      "HideWhenUiHidden" : true,
+      "IndependentHide" : false,
+      "IndependentOpacity" : false,
+      "InputDisabled" : false,
+      "IsTempTab" : false,
+      "Name" : "ALL",
+      "Opacity" : 100,
+      "PopOut" : false,
+      "SelectedChannels" : {
+        "$type" : "System.Collections.Generic.Dictionary`2[[ChatTwo.Code.ChatType, ChatTwo],[System.ValueTuple`2[[ChatTwo.Code.ChatSource, ChatTwo],[ChatTwo.Code.ChatSource, ChatTwo]], System.Private.CoreLib]], System.Private.CoreLib",
+        "Alarm" : {
+          "$type" : "System.ValueTuple`2[[ChatTwo.Code.ChatSource, ChatTwo],[ChatTwo.Code.ChatSource, ChatTwo]], System.Private.CoreLib",
+          "Item1" : 4094,
+          "Item2" : 4094
+        },
+        "Alliance" : {
+          "$type" : "System.ValueTuple`2[[ChatTwo.Code.ChatSource, ChatTwo],[ChatTwo.Code.ChatSource, ChatTwo]], System.Private.CoreLib",
+          "Item1" : 4094,
+          "Item2" : 4094
+        },
+        "Crafting" : {
+          "$type" : "System.ValueTuple`2[[ChatTwo.Code.ChatSource, ChatTwo],[ChatTwo.Code.ChatSource, ChatTwo]], System.Private.CoreLib",
+          "Item1" : 4094,
+          "Item2" : 4094
+        },
+        "CrossLinkshell1" : {
+          "$type" : "System.ValueTuple`2[[ChatTwo.Code.ChatSource, ChatTwo],[ChatTwo.Code.ChatSource, ChatTwo]], System.Private.CoreLib",
+          "Item1" : 4094,
+          "Item2" : 4094
+        },
+        "CrossLinkshell2" : {
+          "$type" : "System.ValueTuple`2[[ChatTwo.Code.ChatSource, ChatTwo],[ChatTwo.Code.ChatSource, ChatTwo]], System.Private.CoreLib",
+          "Item1" : 4094,
+          "Item2" : 4094
+        },
+        "CrossLinkshell3" : {
+          "$type" : "System.ValueTuple`2[[ChatTwo.Code.ChatSource, ChatTwo],[ChatTwo.Code.ChatSource, ChatTwo]], System.Private.CoreLib",
+          "Item1" : 4094,
+          "Item2" : 4094
+        },
+        "CrossParty" : {
+          "$type" : "System.ValueTuple`2[[ChatTwo.Code.ChatSource, ChatTwo],[ChatTwo.Code.ChatSource, ChatTwo]], System.Private.CoreLib",
+          "Item1" : 4094,
+          "Item2" : 4094
+        },
+        "CustomEmote" : {
+          "$type" : "System.ValueTuple`2[[ChatTwo.Code.ChatSource, ChatTwo],[ChatTwo.Code.ChatSource, ChatTwo]], System.Private.CoreLib",
+          "Item1" : 4094,
+          "Item2" : 4094
+        },
+        "Debug" : {
+          "$type" : "System.ValueTuple`2[[ChatTwo.Code.ChatSource, ChatTwo],[ChatTwo.Code.ChatSource, ChatTwo]], System.Private.CoreLib",
+          "Item1" : 4094,
+          "Item2" : 4094
+        },
+        "Echo" : {
+          "$type" : "System.ValueTuple`2[[ChatTwo.Code.ChatSource, ChatTwo],[ChatTwo.Code.ChatSource, ChatTwo]], System.Private.CoreLib",
+          "Item1" : 4094,
+          "Item2" : 4094
+        },
+        "Error" : {
+          "$type" : "System.ValueTuple`2[[ChatTwo.Code.ChatSource, ChatTwo],[ChatTwo.Code.ChatSource, ChatTwo]], System.Private.CoreLib",
+          "Item1" : 4094,
+          "Item2" : 4094
+        },
+        "FreeCompany" : {
+          "$type" : "System.ValueTuple`2[[ChatTwo.Code.ChatSource, ChatTwo],[ChatTwo.Code.ChatSource, ChatTwo]], System.Private.CoreLib",
+          "Item1" : 4094,
+          "Item2" : 4094
+        },
+        "FreeCompanyAnnouncement" : {
+          "$type" : "System.ValueTuple`2[[ChatTwo.Code.ChatSource, ChatTwo],[ChatTwo.Code.ChatSource, ChatTwo]], System.Private.CoreLib",
+          "Item1" : 4094,
+          "Item2" : 4094
+        },
+        "FreeCompanyLoginLogout" : {
+          "$type" : "System.ValueTuple`2[[ChatTwo.Code.ChatSource, ChatTwo],[ChatTwo.Code.ChatSource, ChatTwo]], System.Private.CoreLib",
+          "Item1" : 4094,
+          "Item2" : 4094
+        },
+        "Gathering" : {
+          "$type" : "System.ValueTuple`2[[ChatTwo.Code.ChatSource, ChatTwo],[ChatTwo.Code.ChatSource, ChatTwo]], System.Private.CoreLib",
+          "Item1" : 2,
+          "Item2" : 2
+        },
+        "GatheringSystem" : {
+          "$type" : "System.ValueTuple`2[[ChatTwo.Code.ChatSource, ChatTwo],[ChatTwo.Code.ChatSource, ChatTwo]], System.Private.CoreLib",
+          "Item1" : 4094,
+          "Item2" : 4094
+        },
+        "LootNotice" : {
+          "$type" : "System.ValueTuple`2[[ChatTwo.Code.ChatSource, ChatTwo],[ChatTwo.Code.ChatSource, ChatTwo]], System.Private.CoreLib",
+          "Item1" : 4094,
+          "Item2" : 4094
+        },
+        "LootRoll" : {
+          "$type" : "System.ValueTuple`2[[ChatTwo.Code.ChatSource, ChatTwo],[ChatTwo.Code.ChatSource, ChatTwo]], System.Private.CoreLib",
+          "Item1" : 4094,
+          "Item2" : 4094
+        },
+        "MessageBook" : {
+          "$type" : "System.ValueTuple`2[[ChatTwo.Code.ChatSource, ChatTwo],[ChatTwo.Code.ChatSource, ChatTwo]], System.Private.CoreLib",
+          "Item1" : 4094,
+          "Item2" : 4094
+        },
+        "Notice" : {
+          "$type" : "System.ValueTuple`2[[ChatTwo.Code.ChatSource, ChatTwo],[ChatTwo.Code.ChatSource, ChatTwo]], System.Private.CoreLib",
+          "Item1" : 4094,
+          "Item2" : 4094
+        },
+        "NoviceNetworkSystem" : {
+          "$type" : "System.ValueTuple`2[[ChatTwo.Code.ChatSource, ChatTwo],[ChatTwo.Code.ChatSource, ChatTwo]], System.Private.CoreLib",
+          "Item1" : 4094,
+          "Item2" : 4094
+        },
+        "Orchestrion" : {
+          "$type" : "System.ValueTuple`2[[ChatTwo.Code.ChatSource, ChatTwo],[ChatTwo.Code.ChatSource, ChatTwo]], System.Private.CoreLib",
+          "Item1" : 4094,
+          "Item2" : 4094
+        },
+        "Party" : {
+          "$type" : "System.ValueTuple`2[[ChatTwo.Code.ChatSource, ChatTwo],[ChatTwo.Code.ChatSource, ChatTwo]], System.Private.CoreLib",
+          "Item1" : 4094,
+          "Item2" : 4094
+        },
+        "Progress" : {
+          "$type" : "System.ValueTuple`2[[ChatTwo.Code.ChatSource, ChatTwo],[ChatTwo.Code.ChatSource, ChatTwo]], System.Private.CoreLib",
+          "Item1" : 4094,
+          "Item2" : 4094
+        },
+        "PvpTeam" : {
+          "$type" : "System.ValueTuple`2[[ChatTwo.Code.ChatSource, ChatTwo],[ChatTwo.Code.ChatSource, ChatTwo]], System.Private.CoreLib",
+          "Item1" : 4094,
+          "Item2" : 4094
+        },
+        "PvpTeamAnnouncement" : {
+          "$type" : "System.ValueTuple`2[[ChatTwo.Code.ChatSource, ChatTwo],[ChatTwo.Code.ChatSource, ChatTwo]], System.Private.CoreLib",
+          "Item1" : 4094,
+          "Item2" : 4094
+        },
+        "PvpTeamLoginLogout" : {
+          "$type" : "System.ValueTuple`2[[ChatTwo.Code.ChatSource, ChatTwo],[ChatTwo.Code.ChatSource, ChatTwo]], System.Private.CoreLib",
+          "Item1" : 4094,
+          "Item2" : 4094
+        },
+        "RandomNumber" : {
+          "$type" : "System.ValueTuple`2[[ChatTwo.Code.ChatSource, ChatTwo],[ChatTwo.Code.ChatSource, ChatTwo]], System.Private.CoreLib",
+          "Item1" : 4094,
+          "Item2" : 4094
+        },
+        "RetainerSale" : {
+          "$type" : "System.ValueTuple`2[[ChatTwo.Code.ChatSource, ChatTwo],[ChatTwo.Code.ChatSource, ChatTwo]], System.Private.CoreLib",
+          "Item1" : 4094,
+          "Item2" : 4094
+        },
+        "Say" : {
+          "$type" : "System.ValueTuple`2[[ChatTwo.Code.ChatSource, ChatTwo],[ChatTwo.Code.ChatSource, ChatTwo]], System.Private.CoreLib",
+          "Item1" : 4094,
+          "Item2" : 4094
+        },
+        "Shout" : {
+          "$type" : "System.ValueTuple`2[[ChatTwo.Code.ChatSource, ChatTwo],[ChatTwo.Code.ChatSource, ChatTwo]], System.Private.CoreLib",
+          "Item1" : 4094,
+          "Item2" : 4094
+        },
+        "Sign" : {
+          "$type" : "System.ValueTuple`2[[ChatTwo.Code.ChatSource, ChatTwo],[ChatTwo.Code.ChatSource, ChatTwo]], System.Private.CoreLib",
+          "Item1" : 4094,
+          "Item2" : 4094
+        },
+        "StandardEmote" : {
+          "$type" : "System.ValueTuple`2[[ChatTwo.Code.ChatSource, ChatTwo],[ChatTwo.Code.ChatSource, ChatTwo]], System.Private.CoreLib",
+          "Item1" : 4094,
+          "Item2" : 4094
+        },
+        "System" : {
+          "$type" : "System.ValueTuple`2[[ChatTwo.Code.ChatSource, ChatTwo],[ChatTwo.Code.ChatSource, ChatTwo]], System.Private.CoreLib",
+          "Item1" : 4094,
+          "Item2" : 4094
+        },
+        "Urgent" : {
+          "$type" : "System.ValueTuple`2[[ChatTwo.Code.ChatSource, ChatTwo],[ChatTwo.Code.ChatSource, ChatTwo]], System.Private.CoreLib",
+          "Item1" : 4094,
+          "Item2" : 4094
+        },
+        "Yell" : {
+          "$type" : "System.ValueTuple`2[[ChatTwo.Code.ChatSource, ChatTwo],[ChatTwo.Code.ChatSource, ChatTwo]], System.Private.CoreLib",
+          "Item1" : 4094,
+          "Item2" : 4094
+        }
+      },
+      "SupportsInput" : false,
+      "UnhideOnActivity" : false,
+      "UnreadMode" : 2
+    },
+    {
+      "$type" : "ChatTwo.Tab, ChatTwo",
+      "AllSenderMessages" : false,
+      "CanMove" : true,
+      "CanResize" : true,
+      "Channel" : null,
+      "ChatCodes" : {
+        "$type" : "System.Collections.Generic.Dictionary`2[[ChatTwo.Code.ChatType, ChatTwo],[ChatTwo.Code.ChatSource, ChatTwo]], System.Private.CoreLib"
+      },
+      "DisplayTimestamp" : true,
+      "ExtraChatAll" : false,
+      "ExtraChatChannels" : [],
+      "HideDuringCutscenes" : true,
+      "HideInBattle" : false,
+      "HideInLoadingScreens" : false,
+      "HideWhenInactive" : false,
+      "HideWhenNotLoggedIn" : true,
+      "HideWhenUiHidden" : true,
+      "IndependentHide" : false,
+      "IndependentOpacity" : false,
+      "InputDisabled" : false,
+      "IsTempTab" : false,
+      "Name" : "BT",
+      "Opacity" : 100,
+      "PopOut" : false,
+      "SelectedChannels" : {
+        "$type" : "System.Collections.Generic.Dictionary`2[[ChatTwo.Code.ChatType, ChatTwo],[System.ValueTuple`2[[ChatTwo.Code.ChatSource, ChatTwo],[ChatTwo.Code.ChatSource, ChatTwo]], System.Private.CoreLib]], System.Private.CoreLib",
+        "Action" : {
+          "$type" : "System.ValueTuple`2[[ChatTwo.Code.ChatSource, ChatTwo],[ChatTwo.Code.ChatSource, ChatTwo]], System.Private.CoreLib",
+          "Item1" : 4094,
+          "Item2" : 4094
+        },
+        "BattleSystem" : {
+          "$type" : "System.ValueTuple`2[[ChatTwo.Code.ChatSource, ChatTwo],[ChatTwo.Code.ChatSource, ChatTwo]], System.Private.CoreLib",
+          "Item1" : 4094,
+          "Item2" : 4094
+        },
+        "Damage" : {
+          "$type" : "System.ValueTuple`2[[ChatTwo.Code.ChatSource, ChatTwo],[ChatTwo.Code.ChatSource, ChatTwo]], System.Private.CoreLib",
+          "Item1" : 4094,
+          "Item2" : 4094
+        },
+        "Error" : {
+          "$type" : "System.ValueTuple`2[[ChatTwo.Code.ChatSource, ChatTwo],[ChatTwo.Code.ChatSource, ChatTwo]], System.Private.CoreLib",
+          "Item1" : 4094,
+          "Item2" : 4094
+        },
+        "GainBuff" : {
+          "$type" : "System.ValueTuple`2[[ChatTwo.Code.ChatSource, ChatTwo],[ChatTwo.Code.ChatSource, ChatTwo]], System.Private.CoreLib",
+          "Item1" : 4094,
+          "Item2" : 4094
+        },
+        "GainDebuff" : {
+          "$type" : "System.ValueTuple`2[[ChatTwo.Code.ChatSource, ChatTwo],[ChatTwo.Code.ChatSource, ChatTwo]], System.Private.CoreLib",
+          "Item1" : 4094,
+          "Item2" : 4094
+        },
+        "Healing" : {
+          "$type" : "System.ValueTuple`2[[ChatTwo.Code.ChatSource, ChatTwo],[ChatTwo.Code.ChatSource, ChatTwo]], System.Private.CoreLib",
+          "Item1" : 4094,
+          "Item2" : 4094
+        },
+        "Item" : {
+          "$type" : "System.ValueTuple`2[[ChatTwo.Code.ChatSource, ChatTwo],[ChatTwo.Code.ChatSource, ChatTwo]], System.Private.CoreLib",
+          "Item1" : 4094,
+          "Item2" : 4094
+        },
+        "LoseBuff" : {
+          "$type" : "System.ValueTuple`2[[ChatTwo.Code.ChatSource, ChatTwo],[ChatTwo.Code.ChatSource, ChatTwo]], System.Private.CoreLib",
+          "Item1" : 4094,
+          "Item2" : 4094
+        },
+        "LoseDebuff" : {
+          "$type" : "System.ValueTuple`2[[ChatTwo.Code.ChatSource, ChatTwo],[ChatTwo.Code.ChatSource, ChatTwo]], System.Private.CoreLib",
+          "Item1" : 4094,
+          "Item2" : 4094
+        },
+        "Miss" : {
+          "$type" : "System.ValueTuple`2[[ChatTwo.Code.ChatSource, ChatTwo],[ChatTwo.Code.ChatSource, ChatTwo]], System.Private.CoreLib",
+          "Item1" : 4094,
+          "Item2" : 4094
+        }
+      },
+      "SupportsInput" : false,
+      "UnhideOnActivity" : false,
+      "UnreadMode" : 2
+    },
+    {
+      "$type" : "ChatTwo.Tab, ChatTwo",
+      "AllSenderMessages" : false,
+      "CanMove" : true,
+      "CanResize" : true,
+      "Channel" : null,
+      "ChatCodes" : {
+        "$type" : "System.Collections.Generic.Dictionary`2[[ChatTwo.Code.ChatType, ChatTwo],[ChatTwo.Code.ChatSource, ChatTwo]], System.Private.CoreLib"
+      },
+      "DisplayTimestamp" : true,
+      "ExtraChatAll" : false,
+      "ExtraChatChannels" : [],
+      "HideDuringCutscenes" : true,
+      "HideInBattle" : false,
+      "HideInLoadingScreens" : false,
+      "HideWhenInactive" : false,
+      "HideWhenNotLoggedIn" : true,
+      "HideWhenUiHidden" : true,
+      "IndependentHide" : false,
+      "IndependentOpacity" : false,
+      "InputDisabled" : false,
+      "IsTempTab" : false,
+      "Name" : "FC",
+      "Opacity" : 100,
+      "PopOut" : false,
+      "SelectedChannels" : {
+        "$type" : "System.Collections.Generic.Dictionary`2[[ChatTwo.Code.ChatType, ChatTwo],[System.ValueTuple`2[[ChatTwo.Code.ChatSource, ChatTwo],[ChatTwo.Code.ChatSource, ChatTwo]], System.Private.CoreLib]], System.Private.CoreLib",
+        "Alarm" : {
+          "$type" : "System.ValueTuple`2[[ChatTwo.Code.ChatSource, ChatTwo],[ChatTwo.Code.ChatSource, ChatTwo]], System.Private.CoreLib",
+          "Item1" : 4094,
+          "Item2" : 4094
+        },
+        "FreeCompany" : {
+          "$type" : "System.ValueTuple`2[[ChatTwo.Code.ChatSource, ChatTwo],[ChatTwo.Code.ChatSource, ChatTwo]], System.Private.CoreLib",
+          "Item1" : 4094,
+          "Item2" : 4094
+        },
+        "FreeCompanyAnnouncement" : {
+          "$type" : "System.ValueTuple`2[[ChatTwo.Code.ChatSource, ChatTwo],[ChatTwo.Code.ChatSource, ChatTwo]], System.Private.CoreLib",
+          "Item1" : 4094,
+          "Item2" : 4094
+        },
+        "FreeCompanyLoginLogout" : {
+          "$type" : "System.ValueTuple`2[[ChatTwo.Code.ChatSource, ChatTwo],[ChatTwo.Code.ChatSource, ChatTwo]], System.Private.CoreLib",
+          "Item1" : 4094,
+          "Item2" : 4094
+        }
+      },
+      "SupportsInput" : false,
+      "UnhideOnActivity" : false,
+      "UnreadMode" : 1
+    },
+    {
+      "$type" : "ChatTwo.Tab, ChatTwo",
+      "AllSenderMessages" : false,
+      "CanMove" : true,
+      "CanResize" : true,
+      "Channel" : null,
+      "ChatCodes" : {
+        "$type" : "System.Collections.Generic.Dictionary`2[[ChatTwo.Code.ChatType, ChatTwo],[ChatTwo.Code.ChatSource, ChatTwo]], System.Private.CoreLib"
+      },
+      "DisplayTimestamp" : true,
+      "ExtraChatAll" : false,
+      "ExtraChatChannels" : [],
+      "HideDuringCutscenes" : true,
+      "HideInBattle" : false,
+      "HideInLoadingScreens" : false,
+      "HideWhenInactive" : false,
+      "HideWhenNotLoggedIn" : true,
+      "HideWhenUiHidden" : true,
+      "IndependentHide" : false,
+      "IndependentOpacity" : false,
+      "InputDisabled" : false,
+      "IsTempTab" : false,
+      "Name" : "PT",
+      "Opacity" : 100,
+      "PopOut" : false,
+      "SelectedChannels" : {
+        "$type" : "System.Collections.Generic.Dictionary`2[[ChatTwo.Code.ChatType, ChatTwo],[System.ValueTuple`2[[ChatTwo.Code.ChatSource, ChatTwo],[ChatTwo.Code.ChatSource, ChatTwo]], System.Private.CoreLib]], System.Private.CoreLib",
+        "Alarm" : {
+          "$type" : "System.ValueTuple`2[[ChatTwo.Code.ChatSource, ChatTwo],[ChatTwo.Code.ChatSource, ChatTwo]], System.Private.CoreLib",
+          "Item1" : 4094,
+          "Item2" : 4094
+        },
+        "Alliance" : {
+          "$type" : "System.ValueTuple`2[[ChatTwo.Code.ChatSource, ChatTwo],[ChatTwo.Code.ChatSource, ChatTwo]], System.Private.CoreLib",
+          "Item1" : 4094,
+          "Item2" : 4094
+        },
+        "CrossParty" : {
+          "$type" : "System.ValueTuple`2[[ChatTwo.Code.ChatSource, ChatTwo],[ChatTwo.Code.ChatSource, ChatTwo]], System.Private.CoreLib",
+          "Item1" : 4094,
+          "Item2" : 4094
+        },
+        "Party" : {
+          "$type" : "System.ValueTuple`2[[ChatTwo.Code.ChatSource, ChatTwo],[ChatTwo.Code.ChatSource, ChatTwo]], System.Private.CoreLib",
+          "Item1" : 4094,
+          "Item2" : 4094
+        },
+        "PvpTeam" : {
+          "$type" : "System.ValueTuple`2[[ChatTwo.Code.ChatSource, ChatTwo],[ChatTwo.Code.ChatSource, ChatTwo]], System.Private.CoreLib",
+          "Item1" : 4094,
+          "Item2" : 4094
+        },
+        "RandomNumber" : {
+          "$type" : "System.ValueTuple`2[[ChatTwo.Code.ChatSource, ChatTwo],[ChatTwo.Code.ChatSource, ChatTwo]], System.Private.CoreLib",
+          "Item1" : 4094,
+          "Item2" : 4094
+        }
+      },
+      "SupportsInput" : false,
+      "UnhideOnActivity" : false,
+      "UnreadMode" : 1
+    },
+    {
+      "$type" : "ChatTwo.Tab, ChatTwo",
+      "AllSenderMessages" : false,
+      "CanMove" : true,
+      "CanResize" : true,
+      "Channel" : null,
+      "ChatCodes" : {
+        "$type" : "System.Collections.Generic.Dictionary`2[[ChatTwo.Code.ChatType, ChatTwo],[ChatTwo.Code.ChatSource, ChatTwo]], System.Private.CoreLib"
+      },
+      "DisplayTimestamp" : true,
+      "ExtraChatAll" : false,
+      "ExtraChatChannels" : [],
+      "HideDuringCutscenes" : true,
+      "HideInBattle" : false,
+      "HideInLoadingScreens" : false,
+      "HideWhenInactive" : false,
+      "HideWhenNotLoggedIn" : true,
+      "HideWhenUiHidden" : true,
+      "IndependentHide" : false,
+      "IndependentOpacity" : false,
+      "InputDisabled" : false,
+      "IsTempTab" : false,
+      "Name" : "RP",
+      "Opacity" : 100,
+      "PopOut" : false,
+      "SelectedChannels" : {
+        "$type" : "System.Collections.Generic.Dictionary`2[[ChatTwo.Code.ChatType, ChatTwo],[System.ValueTuple`2[[ChatTwo.Code.ChatSource, ChatTwo],[ChatTwo.Code.ChatSource, ChatTwo]], System.Private.CoreLib]], System.Private.CoreLib",
+        "Alarm" : {
+          "$type" : "System.ValueTuple`2[[ChatTwo.Code.ChatSource, ChatTwo],[ChatTwo.Code.ChatSource, ChatTwo]], System.Private.CoreLib",
+          "Item1" : 4094,
+          "Item2" : 4094
+        },
+        "CrossLinkshell1" : {
+          "$type" : "System.ValueTuple`2[[ChatTwo.Code.ChatSource, ChatTwo],[ChatTwo.Code.ChatSource, ChatTwo]], System.Private.CoreLib",
+          "Item1" : 4094,
+          "Item2" : 4094
+        },
+        "CrossLinkshell2" : {
+          "$type" : "System.ValueTuple`2[[ChatTwo.Code.ChatSource, ChatTwo],[ChatTwo.Code.ChatSource, ChatTwo]], System.Private.CoreLib",
+          "Item1" : 4094,
+          "Item2" : 4094
+        },
+        "CustomEmote" : {
+          "$type" : "System.ValueTuple`2[[ChatTwo.Code.ChatSource, ChatTwo],[ChatTwo.Code.ChatSource, ChatTwo]], System.Private.CoreLib",
+          "Item1" : 4094,
+          "Item2" : 4094
+        },
+        "RandomNumber" : {
+          "$type" : "System.ValueTuple`2[[ChatTwo.Code.ChatSource, ChatTwo],[ChatTwo.Code.ChatSource, ChatTwo]], System.Private.CoreLib",
+          "Item1" : 4094,
+          "Item2" : 4094
+        },
+        "Say" : {
+          "$type" : "System.ValueTuple`2[[ChatTwo.Code.ChatSource, ChatTwo],[ChatTwo.Code.ChatSource, ChatTwo]], System.Private.CoreLib",
+          "Item1" : 4094,
+          "Item2" : 4094
+        },
+        "StandardEmote" : {
+          "$type" : "System.ValueTuple`2[[ChatTwo.Code.ChatSource, ChatTwo],[ChatTwo.Code.ChatSource, ChatTwo]], System.Private.CoreLib",
+          "Item1" : 4094,
+          "Item2" : 4094
+        }
+      },
+      "SupportsInput" : false,
+      "UnhideOnActivity" : false,
+      "UnreadMode" : 1
+    },
+    {
+      "$type" : "ChatTwo.Tab, ChatTwo",
+      "AllSenderMessages" : false,
+      "CanMove" : true,
+      "CanResize" : true,
+      "Channel" : null,
+      "ChatCodes" : {
+        "$type" : "System.Collections.Generic.Dictionary`2[[ChatTwo.Code.ChatType, ChatTwo],[ChatTwo.Code.ChatSource, ChatTwo]], System.Private.CoreLib"
+      },
+      "DisplayTimestamp" : true,
+      "ExtraChatAll" : false,
+      "ExtraChatChannels" : [],
+      "HideDuringCutscenes" : true,
+      "HideInBattle" : false,
+      "HideInLoadingScreens" : false,
+      "HideWhenInactive" : false,
+      "HideWhenNotLoggedIn" : true,
+      "HideWhenUiHidden" : true,
+      "IndependentHide" : false,
+      "IndependentOpacity" : false,
+      "InputDisabled" : false,
+      "IsTempTab" : false,
+      "Name" : "LS",
+      "Opacity" : 100,
+      "PopOut" : false,
+      "SelectedChannels" : {
+        "$type" : "System.Collections.Generic.Dictionary`2[[ChatTwo.Code.ChatType, ChatTwo],[System.ValueTuple`2[[ChatTwo.Code.ChatSource, ChatTwo],[ChatTwo.Code.ChatSource, ChatTwo]], System.Private.CoreLib]], System.Private.CoreLib",
+        "Alarm" : {
+          "$type" : "System.ValueTuple`2[[ChatTwo.Code.ChatSource, ChatTwo],[ChatTwo.Code.ChatSource, ChatTwo]], System.Private.CoreLib",
+          "Item1" : 4094,
+          "Item2" : 4094
+        },
+        "CrossLinkshell1" : {
+          "$type" : "System.ValueTuple`2[[ChatTwo.Code.ChatSource, ChatTwo],[ChatTwo.Code.ChatSource, ChatTwo]], System.Private.CoreLib",
+          "Item1" : 4094,
+          "Item2" : 4094
+        },
+        "CrossLinkshell2" : {
+          "$type" : "System.ValueTuple`2[[ChatTwo.Code.ChatSource, ChatTwo],[ChatTwo.Code.ChatSource, ChatTwo]], System.Private.CoreLib",
+          "Item1" : 4094,
+          "Item2" : 4094
+        },
+        "Linkshell1" : {
+          "$type" : "System.ValueTuple`2[[ChatTwo.Code.ChatSource, ChatTwo],[ChatTwo.Code.ChatSource, ChatTwo]], System.Private.CoreLib",
+          "Item1" : 4094,
+          "Item2" : 4094
+        },
+        "Linkshell2" : {
+          "$type" : "System.ValueTuple`2[[ChatTwo.Code.ChatSource, ChatTwo],[ChatTwo.Code.ChatSource, ChatTwo]], System.Private.CoreLib",
+          "Item1" : 4094,
+          "Item2" : 4094
+        },
+        "Linkshell3" : {
+          "$type" : "System.ValueTuple`2[[ChatTwo.Code.ChatSource, ChatTwo],[ChatTwo.Code.ChatSource, ChatTwo]], System.Private.CoreLib",
+          "Item1" : 4094,
+          "Item2" : 4094
+        },
+        "Linkshell4" : {
+          "$type" : "System.ValueTuple`2[[ChatTwo.Code.ChatSource, ChatTwo],[ChatTwo.Code.ChatSource, ChatTwo]], System.Private.CoreLib",
+          "Item1" : 4094,
+          "Item2" : 4094
+        },
+        "Linkshell5" : {
+          "$type" : "System.ValueTuple`2[[ChatTwo.Code.ChatSource, ChatTwo],[ChatTwo.Code.ChatSource, ChatTwo]], System.Private.CoreLib",
+          "Item1" : 4094,
+          "Item2" : 4094
+        },
+        "Linkshell6" : {
+          "$type" : "System.ValueTuple`2[[ChatTwo.Code.ChatSource, ChatTwo],[ChatTwo.Code.ChatSource, ChatTwo]], System.Private.CoreLib",
+          "Item1" : 4094,
+          "Item2" : 4094
+        },
+        "Linkshell7" : {
+          "$type" : "System.ValueTuple`2[[ChatTwo.Code.ChatSource, ChatTwo],[ChatTwo.Code.ChatSource, ChatTwo]], System.Private.CoreLib",
+          "Item1" : 4094,
+          "Item2" : 4094
+        },
+        "Linkshell8" : {
+          "$type" : "System.ValueTuple`2[[ChatTwo.Code.ChatSource, ChatTwo],[ChatTwo.Code.ChatSource, ChatTwo]], System.Private.CoreLib",
+          "Item1" : 4094,
+          "Item2" : 4094
+        },
+        "RandomNumber" : {
+          "$type" : "System.ValueTuple`2[[ChatTwo.Code.ChatSource, ChatTwo],[ChatTwo.Code.ChatSource, ChatTwo]], System.Private.CoreLib",
+          "Item1" : 4094,
+          "Item2" : 4094
+        }
+      },
+      "SupportsInput" : false,
+      "UnhideOnActivity" : false,
+      "UnreadMode" : 1
+    },
+    {
+      "$type" : "ChatTwo.Tab, ChatTwo",
+      "AllSenderMessages" : false,
+      "CanMove" : true,
+      "CanResize" : true,
+      "Channel" : null,
+      "ChatCodes" : {
+        "$type" : "System.Collections.Generic.Dictionary`2[[ChatTwo.Code.ChatType, ChatTwo],[ChatTwo.Code.ChatSource, ChatTwo]], System.Private.CoreLib"
+      },
+      "DisplayTimestamp" : true,
+      "ExtraChatAll" : false,
+      "ExtraChatChannels" : [],
+      "HideDuringCutscenes" : true,
+      "HideInBattle" : false,
+      "HideInLoadingScreens" : false,
+      "HideWhenInactive" : false,
+      "HideWhenNotLoggedIn" : true,
+      "HideWhenUiHidden" : true,
+      "IndependentHide" : false,
+      "IndependentOpacity" : false,
+      "InputDisabled" : false,
+      "IsTempTab" : false,
+      "Name" : "ZO",
+      "Opacity" : 100,
+      "PopOut" : false,
+      "SelectedChannels" : {
+        "$type" : "System.Collections.Generic.Dictionary`2[[ChatTwo.Code.ChatType, ChatTwo],[System.ValueTuple`2[[ChatTwo.Code.ChatSource, ChatTwo],[ChatTwo.Code.ChatSource, ChatTwo]], System.Private.CoreLib]], System.Private.CoreLib",
+        "Alarm" : {
+          "$type" : "System.ValueTuple`2[[ChatTwo.Code.ChatSource, ChatTwo],[ChatTwo.Code.ChatSource, ChatTwo]], System.Private.CoreLib",
+          "Item1" : 4094,
+          "Item2" : 4094
+        },
+        "Shout" : {
+          "$type" : "System.ValueTuple`2[[ChatTwo.Code.ChatSource, ChatTwo],[ChatTwo.Code.ChatSource, ChatTwo]], System.Private.CoreLib",
+          "Item1" : 4094,
+          "Item2" : 4094
+        },
+        "Yell" : {
+          "$type" : "System.ValueTuple`2[[ChatTwo.Code.ChatSource, ChatTwo],[ChatTwo.Code.ChatSource, ChatTwo]], System.Private.CoreLib",
+          "Item1" : 4094,
+          "Item2" : 4094
+        }
+      },
+      "SupportsInput" : false,
+      "UnhideOnActivity" : false,
+      "UnreadMode" : 1
+    },
+    {
+      "$type" : "ChatTwo.Tab, ChatTwo",
+      "AllSenderMessages" : false,
+      "CanMove" : true,
+      "CanResize" : true,
+      "Channel" : null,
+      "ChatCodes" : {
+        "$type" : "System.Collections.Generic.Dictionary`2[[ChatTwo.Code.ChatType, ChatTwo],[ChatTwo.Code.ChatSource, ChatTwo]], System.Private.CoreLib"
+      },
+      "DisplayTimestamp" : true,
+      "ExtraChatAll" : false,
+      "ExtraChatChannels" : [],
+      "HideDuringCutscenes" : true,
+      "HideInBattle" : false,
+      "HideInLoadingScreens" : false,
+      "HideWhenInactive" : false,
+      "HideWhenNotLoggedIn" : true,
+      "HideWhenUiHidden" : true,
+      "IndependentHide" : false,
+      "IndependentOpacity" : false,
+      "InputDisabled" : false,
+      "IsTempTab" : false,
+      "Name" : "NPC",
+      "Opacity" : 100,
+      "PopOut" : false,
+      "SelectedChannels" : {
+        "$type" : "System.Collections.Generic.Dictionary`2[[ChatTwo.Code.ChatType, ChatTwo],[System.ValueTuple`2[[ChatTwo.Code.ChatSource, ChatTwo],[ChatTwo.Code.ChatSource, ChatTwo]], System.Private.CoreLib]], System.Private.CoreLib",
+        "NpcAnnouncement" : {
+          "$type" : "System.ValueTuple`2[[ChatTwo.Code.ChatSource, ChatTwo],[ChatTwo.Code.ChatSource, ChatTwo]], System.Private.CoreLib",
+          "Item1" : 4094,
+          "Item2" : 4094
+        },
+        "NpcDialogue" : {
+          "$type" : "System.ValueTuple`2[[ChatTwo.Code.ChatSource, ChatTwo],[ChatTwo.Code.ChatSource, ChatTwo]], System.Private.CoreLib",
+          "Item1" : 4094,
+          "Item2" : 4094
+        }
+      },
+      "SupportsInput" : false,
+      "UnhideOnActivity" : false,
+      "UnreadMode" : 2
+    },
+    {
+      "$type" : "ChatTwo.Tab, ChatTwo",
+      "AllSenderMessages" : false,
+      "CanMove" : true,
+      "CanResize" : true,
+      "Channel" : null,
+      "ChatCodes" : {
+        "$type" : "System.Collections.Generic.Dictionary`2[[ChatTwo.Code.ChatType, ChatTwo],[ChatTwo.Code.ChatSource, ChatTwo]], System.Private.CoreLib"
+      },
+      "DisplayTimestamp" : true,
+      "ExtraChatAll" : false,
+      "ExtraChatChannels" : [],
+      "HideDuringCutscenes" : true,
+      "HideInBattle" : false,
+      "HideInLoadingScreens" : false,
+      "HideWhenInactive" : false,
+      "HideWhenNotLoggedIn" : true,
+      "HideWhenUiHidden" : true,
+      "IndependentHide" : false,
+      "IndependentOpacity" : false,
+      "InputDisabled" : false,
+      "IsTempTab" : false,
+      "Name" : "NN",
+      "Opacity" : 100,
+      "PopOut" : false,
+      "SelectedChannels" : {
+        "$type" : "System.Collections.Generic.Dictionary`2[[ChatTwo.Code.ChatType, ChatTwo],[System.ValueTuple`2[[ChatTwo.Code.ChatSource, ChatTwo],[ChatTwo.Code.ChatSource, ChatTwo]], System.Private.CoreLib]], System.Private.CoreLib",
+        "Alarm" : {
+          "$type" : "System.ValueTuple`2[[ChatTwo.Code.ChatSource, ChatTwo],[ChatTwo.Code.ChatSource, ChatTwo]], System.Private.CoreLib",
+          "Item1" : 4094,
+          "Item2" : 4094
+        },
+        "NoviceNetwork" : {
+          "$type" : "System.ValueTuple`2[[ChatTwo.Code.ChatSource, ChatTwo],[ChatTwo.Code.ChatSource, ChatTwo]], System.Private.CoreLib",
+          "Item1" : 4094,
+          "Item2" : 4094
+        },
+        "NoviceNetworkSystem" : {
+          "$type" : "System.ValueTuple`2[[ChatTwo.Code.ChatSource, ChatTwo],[ChatTwo.Code.ChatSource, ChatTwo]], System.Private.CoreLib",
+          "Item1" : 4094,
+          "Item2" : 4094
+        }
+      },
+      "SupportsInput" : false,
+      "UnhideOnActivity" : false,
+      "UnreadMode" : 2
+    },
+    {
+      "$type" : "ChatTwo.Tab, ChatTwo",
+      "AllSenderMessages" : false,
+      "CanMove" : true,
+      "CanResize" : true,
+      "Channel" : null,
+      "ChatCodes" : {
+        "$type" : "System.Collections.Generic.Dictionary`2[[ChatTwo.Code.ChatType, ChatTwo],[ChatTwo.Code.ChatSource, ChatTwo]], System.Private.CoreLib"
+      },
+      "DisplayTimestamp" : true,
+      "ExtraChatAll" : false,
+      "ExtraChatChannels" : [],
+      "HideDuringCutscenes" : true,
+      "HideInBattle" : false,
+      "HideInLoadingScreens" : false,
+      "HideWhenInactive" : false,
+      "HideWhenNotLoggedIn" : true,
+      "HideWhenUiHidden" : true,
+      "IndependentHide" : false,
+      "IndependentOpacity" : false,
+      "InputDisabled" : false,
+      "IsTempTab" : false,
+      "Name" : "SYS",
+      "Opacity" : 100,
+      "PopOut" : false,
+      "SelectedChannels" : {
+        "$type" : "System.Collections.Generic.Dictionary`2[[ChatTwo.Code.ChatType, ChatTwo],[System.ValueTuple`2[[ChatTwo.Code.ChatSource, ChatTwo],[ChatTwo.Code.ChatSource, ChatTwo]], System.Private.CoreLib]], System.Private.CoreLib",
+        "Debug" : {
+          "$type" : "System.ValueTuple`2[[ChatTwo.Code.ChatSource, ChatTwo],[ChatTwo.Code.ChatSource, ChatTwo]], System.Private.CoreLib",
+          "Item1" : 4094,
+          "Item2" : 4094
+        },
+        "Error" : {
+          "$type" : "System.ValueTuple`2[[ChatTwo.Code.ChatSource, ChatTwo],[ChatTwo.Code.ChatSource, ChatTwo]], System.Private.CoreLib",
+          "Item1" : 4094,
+          "Item2" : 4094
+        },
+        "Notice" : {
+          "$type" : "System.ValueTuple`2[[ChatTwo.Code.ChatSource, ChatTwo],[ChatTwo.Code.ChatSource, ChatTwo]], System.Private.CoreLib",
+          "Item1" : 4094,
+          "Item2" : 4094
+        },
+        "System" : {
+          "$type" : "System.ValueTuple`2[[ChatTwo.Code.ChatSource, ChatTwo],[ChatTwo.Code.ChatSource, ChatTwo]], System.Private.CoreLib",
+          "Item1" : 4094,
+          "Item2" : 4094
+        },
+        "Urgent" : {
+          "$type" : "System.ValueTuple`2[[ChatTwo.Code.ChatSource, ChatTwo],[ChatTwo.Code.ChatSource, ChatTwo]], System.Private.CoreLib",
+          "Item1" : 4094,
+          "Item2" : 4094
+        }
+      },
+      "SupportsInput" : false,
+      "UnhideOnActivity" : false,
+      "UnreadMode" : 2
+    },
+    {
+      "$type" : "ChatTwo.Tab, ChatTwo",
+      "AllSenderMessages" : false,
+      "CanMove" : true,
+      "CanResize" : true,
+      "Channel" : null,
+      "ChatCodes" : {
+        "$type" : "System.Collections.Generic.Dictionary`2[[ChatTwo.Code.ChatType, ChatTwo],[ChatTwo.Code.ChatSource, ChatTwo]], System.Private.CoreLib"
+      },
+      "DisplayTimestamp" : true,
+      "ExtraChatAll" : false,
+      "ExtraChatChannels" : [],
+      "HideDuringCutscenes" : true,
+      "HideInBattle" : false,
+      "HideInLoadingScreens" : false,
+      "HideWhenInactive" : false,
+      "HideWhenNotLoggedIn" : true,
+      "HideWhenUiHidden" : true,
+      "IndependentHide" : false,
+      "IndependentOpacity" : false,
+      "InputDisabled" : false,
+      "IsTempTab" : false,
+      "Name" : "LT",
+      "Opacity" : 100,
+      "PopOut" : false,
+      "SelectedChannels" : {
+        "$type" : "System.Collections.Generic.Dictionary`2[[ChatTwo.Code.ChatType, ChatTwo],[System.ValueTuple`2[[ChatTwo.Code.ChatSource, ChatTwo],[ChatTwo.Code.ChatSource, ChatTwo]], System.Private.CoreLib]], System.Private.CoreLib",
+        "Alarm" : {
+          "$type" : "System.ValueTuple`2[[ChatTwo.Code.ChatSource, ChatTwo],[ChatTwo.Code.ChatSource, ChatTwo]], System.Private.CoreLib",
+          "Item1" : 4094,
+          "Item2" : 4094
+        },
+        "LootNotice" : {
+          "$type" : "System.ValueTuple`2[[ChatTwo.Code.ChatSource, ChatTwo],[ChatTwo.Code.ChatSource, ChatTwo]], System.Private.CoreLib",
+          "Item1" : 4094,
+          "Item2" : 4094
+        },
+        "LootRoll" : {
+          "$type" : "System.ValueTuple`2[[ChatTwo.Code.ChatSource, ChatTwo],[ChatTwo.Code.ChatSource, ChatTwo]], System.Private.CoreLib",
+          "Item1" : 4094,
+          "Item2" : 4094
+        },
+        "RetainerSale" : {
+          "$type" : "System.ValueTuple`2[[ChatTwo.Code.ChatSource, ChatTwo],[ChatTwo.Code.ChatSource, ChatTwo]], System.Private.CoreLib",
+          "Item1" : 4094,
+          "Item2" : 4094
+        }
+      },
+      "SupportsInput" : false,
+      "UnhideOnActivity" : false,
+      "UnreadMode" : 2
+    },
+    {
+      "$type" : "ChatTwo.Tab, ChatTwo",
+      "AllSenderMessages" : false,
+      "CanMove" : true,
+      "CanResize" : true,
+      "Channel" : null,
+      "ChatCodes" : {
+        "$type" : "System.Collections.Generic.Dictionary`2[[ChatTwo.Code.ChatType, ChatTwo],[ChatTwo.Code.ChatSource, ChatTwo]], System.Private.CoreLib"
+      },
+      "DisplayTimestamp" : true,
+      "ExtraChatAll" : false,
+      "ExtraChatChannels" : [],
+      "HideDuringCutscenes" : true,
+      "HideInBattle" : false,
+      "HideInLoadingScreens" : false,
+      "HideWhenInactive" : false,
+      "HideWhenNotLoggedIn" : true,
+      "HideWhenUiHidden" : true,
+      "IndependentHide" : false,
+      "IndependentOpacity" : false,
+      "InputDisabled" : false,
+      "IsTempTab" : false,
+      "Name" : "CRF",
+      "Opacity" : 100,
+      "PopOut" : false,
+      "SelectedChannels" : {
+        "$type" : "System.Collections.Generic.Dictionary`2[[ChatTwo.Code.ChatType, ChatTwo],[System.ValueTuple`2[[ChatTwo.Code.ChatSource, ChatTwo],[ChatTwo.Code.ChatSource, ChatTwo]], System.Private.CoreLib]], System.Private.CoreLib",
+        "Alarm" : {
+          "$type" : "System.ValueTuple`2[[ChatTwo.Code.ChatSource, ChatTwo],[ChatTwo.Code.ChatSource, ChatTwo]], System.Private.CoreLib",
+          "Item1" : 4094,
+          "Item2" : 4094
+        },
+        "Crafting" : {
+          "$type" : "System.ValueTuple`2[[ChatTwo.Code.ChatSource, ChatTwo],[ChatTwo.Code.ChatSource, ChatTwo]], System.Private.CoreLib",
+          "Item1" : 4094,
+          "Item2" : 4094
+        },
+        "Gathering" : {
+          "$type" : "System.ValueTuple`2[[ChatTwo.Code.ChatSource, ChatTwo],[ChatTwo.Code.ChatSource, ChatTwo]], System.Private.CoreLib",
+          "Item1" : 4094,
+          "Item2" : 4094
+        },
+        "GatheringSystem" : {
+          "$type" : "System.ValueTuple`2[[ChatTwo.Code.ChatSource, ChatTwo],[ChatTwo.Code.ChatSource, ChatTwo]], System.Private.CoreLib",
+          "Item1" : 4094,
+          "Item2" : 4094
+        }
+      },
+      "SupportsInput" : false,
+      "UnhideOnActivity" : false,
+      "UnreadMode" : 2
+    },
+    {
+      "$type" : "ChatTwo.Tab, ChatTwo",
+      "AllSenderMessages" : false,
+      "CanMove" : true,
+      "CanResize" : true,
+      "Channel" : null,
+      "ChatCodes" : {
+        "$type" : "System.Collections.Generic.Dictionary`2[[ChatTwo.Code.ChatType, ChatTwo],[ChatTwo.Code.ChatSource, ChatTwo]], System.Private.CoreLib"
+      },
+      "DisplayTimestamp" : true,
+      "ExtraChatAll" : false,
+      "ExtraChatChannels" : [],
+      "HideDuringCutscenes" : true,
+      "HideInBattle" : false,
+      "HideInLoadingScreens" : false,
+      "HideWhenInactive" : false,
+      "HideWhenNotLoggedIn" : true,
+      "HideWhenUiHidden" : true,
+      "IndependentHide" : false,
+      "IndependentOpacity" : false,
+      "InputDisabled" : false,
+      "IsTempTab" : false,
+      "Name" : "LI",
+      "Opacity" : 100,
+      "PopOut" : false,
+      "SelectedChannels" : {
+        "$type" : "System.Collections.Generic.Dictionary`2[[ChatTwo.Code.ChatType, ChatTwo],[System.ValueTuple`2[[ChatTwo.Code.ChatSource, ChatTwo],[ChatTwo.Code.ChatSource, ChatTwo]], System.Private.CoreLib]], System.Private.CoreLib",
+        "CrossLinkshell3" : {
+          "$type" : "System.ValueTuple`2[[ChatTwo.Code.ChatSource, ChatTwo],[ChatTwo.Code.ChatSource, ChatTwo]], System.Private.CoreLib",
+          "Item1" : 4094,
+          "Item2" : 4094
+        }
+      },
+      "SupportsInput" : false,
+      "UnhideOnActivity" : false,
+      "UnreadMode" : 1
+    },
+    {
+      "$type" : "ChatTwo.Tab, ChatTwo",
+      "AllSenderMessages" : false,
+      "CanMove" : true,
+      "CanResize" : true,
+      "Channel" : null,
+      "ChatCodes" : {
+        "$type" : "System.Collections.Generic.Dictionary`2[[ChatTwo.Code.ChatType, ChatTwo],[ChatTwo.Code.ChatSource, ChatTwo]], System.Private.CoreLib"
+      },
+      "DisplayTimestamp" : true,
+      "ExtraChatAll" : false,
+      "ExtraChatChannels" : [],
+      "HideDuringCutscenes" : true,
+      "HideInBattle" : false,
+      "HideInLoadingScreens" : false,
+      "HideWhenInactive" : false,
+      "HideWhenNotLoggedIn" : true,
+      "HideWhenUiHidden" : true,
+      "IndependentHide" : false,
+      "IndependentOpacity" : false,
+      "InputDisabled" : false,
+      "IsTempTab" : false,
+      "Name" : "CWLS",
+      "Opacity" : 100,
+      "PopOut" : false,
+      "SelectedChannels" : {
+        "$type" : "System.Collections.Generic.Dictionary`2[[ChatTwo.Code.ChatType, ChatTwo],[System.ValueTuple`2[[ChatTwo.Code.ChatSource, ChatTwo],[ChatTwo.Code.ChatSource, ChatTwo]], System.Private.CoreLib]], System.Private.CoreLib",
+        "CrossLinkshell1" : {
+          "$type" : "System.ValueTuple`2[[ChatTwo.Code.ChatSource, ChatTwo],[ChatTwo.Code.ChatSource, ChatTwo]], System.Private.CoreLib",
+          "Item1" : 4094,
+          "Item2" : 4094
+        },
+        "CrossLinkshell2" : {
+          "$type" : "System.ValueTuple`2[[ChatTwo.Code.ChatSource, ChatTwo],[ChatTwo.Code.ChatSource, ChatTwo]], System.Private.CoreLib",
+          "Item1" : 4094,
+          "Item2" : 4094
+        },
+        "CrossLinkshell3" : {
+          "$type" : "System.ValueTuple`2[[ChatTwo.Code.ChatSource, ChatTwo],[ChatTwo.Code.ChatSource, ChatTwo]], System.Private.CoreLib",
+          "Item1" : 4094,
+          "Item2" : 4094
+        },
+        "CrossLinkshell4" : {
+          "$type" : "System.ValueTuple`2[[ChatTwo.Code.ChatSource, ChatTwo],[ChatTwo.Code.ChatSource, ChatTwo]], System.Private.CoreLib",
+          "Item1" : 4094,
+          "Item2" : 4094
+        },
+        "CrossLinkshell5" : {
+          "$type" : "System.ValueTuple`2[[ChatTwo.Code.ChatSource, ChatTwo],[ChatTwo.Code.ChatSource, ChatTwo]], System.Private.CoreLib",
+          "Item1" : 4094,
+          "Item2" : 4094
+        },
+        "CrossLinkshell6" : {
+          "$type" : "System.ValueTuple`2[[ChatTwo.Code.ChatSource, ChatTwo],[ChatTwo.Code.ChatSource, ChatTwo]], System.Private.CoreLib",
+          "Item1" : 4094,
+          "Item2" : 4094
+        },
+        "CrossLinkshell7" : {
+          "$type" : "System.ValueTuple`2[[ChatTwo.Code.ChatSource, ChatTwo],[ChatTwo.Code.ChatSource, ChatTwo]], System.Private.CoreLib",
+          "Item1" : 4094,
+          "Item2" : 4094
+        },
+        "CrossLinkshell8" : {
+          "$type" : "System.ValueTuple`2[[ChatTwo.Code.ChatSource, ChatTwo],[ChatTwo.Code.ChatSource, ChatTwo]], System.Private.CoreLib",
+          "Item1" : 4094,
+          "Item2" : 4094
+        }
+      },
+      "SupportsInput" : false,
+      "UnhideOnActivity" : false,
+      "UnreadMode" : 1
+    }
+  ],
+  "TooltipOffset" : 0,
+  "Use24HourClock" : true,
+  "Version" : 6,
+  "WebinterfaceAutoStart" : true,
+  "WebinterfaceEnabled" : false,
+  "WebinterfaceMaxLinesToSend" : 1000,
+  "WebinterfacePort" : 9000,
+  "WindowAlpha" : 70
+}
