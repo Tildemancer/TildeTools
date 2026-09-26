@@ -10,6 +10,6 @@ Also spellchecks the default chat box if you don't want to use Chat 2 or XIV Mes
 
 Not intended for the public dalamud repos, violates the automation stuff, I think. It may be split for the public repos once this private plugin is feature complete, talked to the lovely folks in the Discord about it earlier and it's honestly very viable, but we're a long way off from that and I'd like to keep it all in one place to see if things break.
 
-Should??? be feature complete as of 0.4.3. should. I mean not implementation complete ofc but at the very least it has everything I could possibly want out of it, I think.
+Should??? be feature complete as of 0.5.0. should. I mean not implementation complete ofc but at the very least it has everything I could possibly want out of it, I think.
 
 todo; reviews, build the final implementation ipcs, start decoupling bundled addons and making minimal edits to the upstream sources. kind of went hog wild on these but that will not fly long term and my current ipcs are basically just 'what if we changed half the addon' instead of 'expose this one channel i can listen to please :3'
