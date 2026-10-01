@@ -291,10 +291,7 @@ internal sealed class EmoteSplitterModule : IModule
 
         try
         {
-            // Sanitize first so the byte count matches what gets sent. Sanitize.
-            // Sanitise. Fuck it
-            // Bit of an odd note but originally I used sanitise since I was mostly looking at C2's code. Now everything's sanitize except in C2's code.
-            // This is just bookkeeping, you can ignore this
+            // Sanitize first so the byte count matches what gets sent.
             chunks = MessageSplitter.SplitWithBodies(header, _settings.DetachOoc(ChatSender.Sanitize(body), options), options);
         }
         catch (SplitBudgetException ex)

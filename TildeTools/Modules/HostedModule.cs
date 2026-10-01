@@ -164,7 +164,7 @@ internal abstract class HostedModule<T>(string plugin, string internalName, Acti
                 Svc.Log.Error(ex, $"{plugin}'s settings failed to draw.");
 
             _drawFailed = true;
-            ImGui.TextColored(Widgets.ErrorColour, $"{plugin}'s settings could not be drawn. Try reloading!");
+            ImGui.TextColored(Widgets.ErrorColor, $"{plugin}'s settings could not be drawn. Try reloading!");
         }
         finally
         {
@@ -216,7 +216,7 @@ internal abstract class HostedModule<T>(string plugin, string internalName, Acti
         using (ImRaii.TextWrapPos(0f))
         {
             if (FailureReason != null)
-                ImGui.TextColored(Widgets.ErrorColour, $"{plugin} failed to start, send me this: {FailureReason}");
+                ImGui.TextColored(Widgets.ErrorColor, $"{plugin} failed to start, send me this: {FailureReason}");
 
             DrawBody();
         }
@@ -246,7 +246,7 @@ internal abstract class HostedModule<T>(string plugin, string internalName, Acti
         }
 
         // Not mid-Draw, see MainWindow.DrawModuleList
-        // Checks IsEnabled first, RunOnTick doesn't get cancelled by Disable or unload.
+        // Checks IsEnabled first, RunOnTick doesn't get canceled by Disable or unload.
         if (file.Restarts && IsRunning)
             Svc.Framework.RunOnTick(() =>
             {

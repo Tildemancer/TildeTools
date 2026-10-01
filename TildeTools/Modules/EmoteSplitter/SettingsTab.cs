@@ -46,7 +46,7 @@ internal sealed class SettingsTab(EmoteSplitterSettings settings, Action onChang
         ImGui.TextUnformatted("Chat box");
 
         if (!InputCapManager.Available)
-            ImGui.TextColored(WarningColour, "The game functions for this were not found on this game version.");
+            ImGui.TextColored(WarningColor, "The game functions for this were not found on this game version.");
 
         var dirty = Toggle("Oversized Emotes", settings.UnlockChatInput, settings, static (s, v) => s.UnlockChatInput = v);
 
@@ -257,7 +257,7 @@ internal sealed class SettingsTab(EmoteSplitterSettings settings, Action onChang
         ImGui.TextDisabled($"Macros post ~{EmoteSplitterSettings.MacroPaceMs} ms apart (or every 10 frames at 60 FPS).");
 
         if (settings.FreeIntervalMs < EmoteSplitterSettings.MacroPaceMs)
-            ImGui.TextColored(WarningColour, "DANGER! This is faster than a macro would send, so it might be detectable Square-side! You set it " +
+            ImGui.TextColored(WarningColor, "DANGER! This is faster than a macro would send, so it might be detectable Square-side! You set it " +
                                              "this low at your own risk.");
 
         return dirty;

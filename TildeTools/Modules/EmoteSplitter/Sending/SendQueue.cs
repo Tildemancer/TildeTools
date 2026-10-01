@@ -283,7 +283,7 @@ public sealed class SendQueue
             return;
         }
 
-        // If it got dropped or cancelled inside the call, the batch has already ended.
+        // If it got dropped or canceled inside the call, the batch has already ended.
         if (_lastSent is null && _suspect is null)
             return;
 

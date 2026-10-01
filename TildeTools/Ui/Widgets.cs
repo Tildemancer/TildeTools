@@ -9,8 +9,8 @@ namespace TildeTools.Ui;
 
 internal static class Widgets
 {
-    internal static readonly Vector4 ErrorColour = new(1f, 0.4f, 0.3f, 1f);
-    internal static readonly Vector4 WarningColour = new(1f, 0.5f, 0.3f, 1f);
+    internal static readonly Vector4 ErrorColor = new(1f, 0.4f, 0.3f, 1f);
+    internal static readonly Vector4 WarningColor = new(1f, 0.5f, 0.3f, 1f);
 
     internal static void Open(string url)
     {
@@ -92,7 +92,7 @@ internal static class Widgets
             ImGui.TextDisabled(module.Description);
 
             if (unavailable != null)
-                ImGui.TextColored(WarningColour, $"Unavailable: {unavailable}");
+                ImGui.TextColored(WarningColor, $"Unavailable: {unavailable}");
         }
 
         return changed;

@@ -53,7 +53,7 @@ internal static class Credits
             + "kept beside it as COPYRIGHT-SCOWL.txt.", "http://wordlist.sourceforge.net"),
         ("British English dictionary", "By David Bartlett, Andrew Brown and Marco A.G. Pinto, under the LGPL 2.1. "
             + "Trimmed here of the words the American one already has; its notice is in en_GB.aff, and the "
-            + "licence beside it as COPYING-LGPL-2.1.txt.",
+            + "license beside it as COPYING-LGPL-2.1.txt.",
             "https://proofingtoolgui.org"),
         ("Wiktionary", "The definitions, and synonyms WordNet lacks, by its contributors through kaikki.org's "
             + "extract, under CC BY-SA 4.0. Notice in Lexicon/COPYING-Wiktionary.txt.", "https://en.wiktionary.org"),

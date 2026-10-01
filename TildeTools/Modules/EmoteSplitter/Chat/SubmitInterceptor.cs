@@ -95,7 +95,7 @@ internal sealed unsafe class SubmitInterceptor : IDisposable
 
         if (!splittable)
         {
-            Svc.Log.Info($"Not splitting: {line.Split(' ', 2)[0]} is not a recognised chat channel.");
+            Svc.Log.Info($"Not splitting: {line.Split(' ', 2)[0]} is not a recognized chat channel.");
             return false;
         }
 

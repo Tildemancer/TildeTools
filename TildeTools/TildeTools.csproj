@@ -34,7 +34,7 @@
 
   <!--
     The spellchecker's dictionaries in Hunspell's affix format, shipped so it works the same everywhere.
-    en_US is SCOWL's, with COPYRIGHT-SCOWL.txt beside it as its licence asks
+    en_US is SCOWL's, with COPYRIGHT-SCOWL.txt beside it as its license asks
     en_GB is David Bartlett, Andrew Brown and Marco A.G. Pinto's, under the LGPL 2.1, less en_US's words.
     Its notice is in en_GB.aff, and its license is COPYING-LGPL-2.1.txt
   -->

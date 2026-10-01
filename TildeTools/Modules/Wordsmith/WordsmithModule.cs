@@ -4,7 +4,7 @@ using Dalamud.Interface.Windowing;
 namespace TildeTools.Modules.Wordsmith;
 
 // See Hosting.HostInOwnFile
-internal sealed class WordsmithModule() : HostedModule<global::Wordsmith.Wordsmith>("Wordsmith", "Wordsmith", () => global::Wordsmith.Hosting.HostInOwnFile(Config.Load, Config.Save, LogColours.Of))
+internal sealed class WordsmithModule() : HostedModule<global::Wordsmith.Wordsmith>("Wordsmith", "Wordsmith", () => global::Wordsmith.Hosting.HostInOwnFile(Config.Load, Config.Save, LogColors.Of))
 {
     private static readonly HostedConfig<global::Wordsmith.Configuration> Config = new("Wordsmith", ShippedSetup.PathOf("Wordsmith.json"));
 

@@ -7,7 +7,7 @@ using TildeTools.Modules.EmoteSplitter.Chat;
 namespace TildeTools.Modules.Wordsmith;
 
 // The Log Text Colors for a WS pad header's channel.
-internal static class LogColours
+internal static class LogColors
 {
     private static readonly UiConfigOption[] Linkshells =
     [
@@ -31,10 +31,10 @@ internal static class LogColours
         if (!Options.TryGetValue(header, out var found))
             Options[header] = found = (ChannelCommands.IsTell(header) ? ChannelCommands.Tell : ChannelCommands.NameOf(header)) is { } channel ? Option(channel) : null;
 
-        if (found is not { } option || !Svc.GameConfig.TryGet(option, out uint colour) || (colour & 0xFFFFFF) == 0)
+        if (found is not { } option || !Svc.GameConfig.TryGet(option, out uint color) || (color & 0xFFFFFF) == 0)
             return null;
 
-        return new Vector4(((colour >> 16) & 0xFF) / 255f, ((colour >> 8) & 0xFF) / 255f, (colour & 0xFF) / 255f, 1f);
+        return new Vector4(((color >> 16) & 0xFF) / 255f, ((color >> 8) & 0xFF) / 255f, (color & 0xFF) / 255f, 1f);
     }
 
     private static UiConfigOption? Option(string channel) => channel switch

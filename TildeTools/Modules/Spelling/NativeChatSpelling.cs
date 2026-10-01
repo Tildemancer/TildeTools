@@ -17,7 +17,7 @@ namespace TildeTools.Modules.Spelling;
 internal sealed unsafe class NativeChatSpelling(Func<SpellIpc?> speller)
 {
     // ABGR: red
-    private const uint Colour = 0xFF4040FFu;
+    private const uint Color = 0xFF4040FFu;
 
     private const float Drop = 1f;
     private const float Thickness = 1.5f;
@@ -302,7 +302,7 @@ internal sealed unsafe class NativeChatSpelling(Func<SpellIpc?> speller)
 
             (left, var right) = (Math.Max(left, x), Math.Min(x + Width(text, start + length) - _scroll, x + w));
 
-            drawList.AddLine(new Vector2(left, y), new Vector2(right, y), Colour, Thickness);
+            drawList.AddLine(new Vector2(left, y), new Vector2(right, y), Color, Thickness);
 
             _drawn.Add((left, right, top, top + h, start, length));
         }
