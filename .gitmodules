@@ -1,0 +1,12 @@
+[submodule "ct"]
+	path = ct
+	url = https://github.com/Tildemancer/ChatTwo.git
+	branch = tildetools-splitting
+[submodule "xim"]
+	path = xim
+	url = https://github.com/Tildemancer/XIVInstantMessenger.git
+	branch = tildetools-splitting
+[submodule "ws"]
+	path = ws
+	url = https://github.com/Tildemancer/Wordsmith-DalamudPlugin.git
+	branch = tildetools-splitting

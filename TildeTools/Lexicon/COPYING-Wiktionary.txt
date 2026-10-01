@@ -1,0 +1,12 @@
+definitions.tsv, and the synonyms in synonyms.tsv that WordNet lacks, come from the
+English Wiktionary (https://en.wiktionary.org/), written by its contributors, through
+kaikki.org's wiktextract extract (https://kaikki.org/) of 25 September 2026.
+
+Used under the Creative Commons Attribution-ShareAlike 4.0 International License
+(https://creativecommons.org/licenses/by-sa/4.0/), and shared under the same licence.
+
+Changed here: English entries only, for words the spellchecker accepts and words sharing
+a line with a political one; each sense's last gloss; a slur, offensive, vulgar, derogatory
+or slang sense marked as such, on its gloss and its synonyms, from its own tags; senses
+about real-world politics and nicknames for real people left out, bar an acronym's own;
+reformatted as tab-separated lines.
