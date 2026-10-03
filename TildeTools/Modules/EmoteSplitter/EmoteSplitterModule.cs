@@ -13,6 +13,7 @@ using TildeTools.Modules.EmoteSplitter.Chat;
 using TildeTools.Modules.EmoteSplitter.Sending;
 using TildeTools.Modules.EmoteSplitter.Splitting;
 using Chunks = System.Collections.Generic.IReadOnlyList<TildeTools.Modules.EmoteSplitter.Splitting.SplitPart>;
+using InputCallbackResult = FFXIVClientStructs.FFXIV.Component.GUI.InputCallbackResult;
 
 namespace TildeTools.Modules.EmoteSplitter;
 
@@ -79,7 +80,7 @@ internal sealed class EmoteSplitterModule : IModule
         Svc.ClientState.Login += OnLogin;
 
         _inputCap = new InputCapManager(_settings);
-        _submit = new SubmitInterceptor(_settings, (header, body) => OnMessageNeedsSplitting(header, body), OnPlayerLine);
+        _submit = new SubmitInterceptor(_settings, (header, body) => OnMessageNeedsSplitting(header, body) != null, OnPlayerLine);
         _enter = new EnterInterceptor(OnEnteredLine);
 
         Svc.Framework.Update += OnFrameworkUpdate;
@@ -262,6 +263,9 @@ internal sealed class EmoteSplitterModule : IModule
         "That message has to be split, and it contains an auto-translate phrase or item link, " +
         "which splitting would corrupt. Nothing was sent.";
 
+    private const string UnsplittableRefusal =
+        "That message is too long for the game and this isn't a recognized channel. Nothing was sent.";
+
     private bool TrySplit(string header, string body, bool splits, out Chunks chunks, out string? reason)
     {
         (chunks, reason) = ([], null);
@@ -366,31 +370,32 @@ internal sealed class EmoteSplitterModule : IModule
         _inputCap?.Apply();
     }
 
-    private bool OnEnteredLine(string line, byte[] raw)
+    private InputCallbackResult? OnEnteredLine(string line, byte[] raw)
     {
-        var bytes = Encoding.UTF8.GetByteCount(line);
-        var payload = ChannelCommands.HasPayload(line);
+        // The editbox measures in raw bytes. better safe than sorry.
+        var bytes = raw.Length - 1;
+        // Less the 0 raw ends in, which Lumina reads as a broken payload.
+        var payload = ChatSender.HasPayload(raw.AsSpan(..^1));
         var splittable = ChannelCommands.TrySplittable(line, out var header, out var body);
 
-        // Also takes one that fits but has a break marker, so a refusal can say why and put it back.
+        // Also takes one that fits but has a break marker, so a refusal can say why and keep it in the box.
         // Not with a link or auto-translate phrase, since the game sends those in one piece and taking the line would drop them...
         if (bytes <= _settings.Budget && (payload || !splittable || MessageSplitter.FindBreak(body).At < 0))
-            return false;
+            return null;
 
         Svc.Log.Info($"Enter on a line to split: {bytes} bytes, budget {_settings.Budget}.");
 
         // If it's not handed back the game will take and drop it silently. Incredible.
-        if (payload)
+        if (payload || (!splittable && bytes > EmoteSplitterSettings.MaxChunkBytes))
         {
-            Refuse(PayloadRefusal);
-            _refused = raw;
-            return true;
+            Refuse(payload ? PayloadRefusal : UnsplittableRefusal);
+            return InputCallbackResult.None;
         }
 
         if (!splittable)
         {
             Svc.Log.Info("Leaving it alone: not a chat channel.");
-            return false;
+            return null;
         }
 
         return OnMessageNeedsSplitting(header, body, raw);
@@ -443,8 +448,8 @@ internal sealed class EmoteSplitterModule : IModule
 
     private readonly HashSet<string> _toHistory = new(ReferenceEqualityComparer.Instance);
 
-    // putBack is null when another plugin sent it.
-    private bool OnMessageNeedsSplitting(string header, string body, byte[]? putBack = null)
+    // raw is null when another plugin sent it.
+    private InputCallbackResult? OnMessageNeedsSplitting(string header, string body, byte[]? raw = null)
     {
         var whole = Encoding.UTF8.GetByteCount(header.Length > 0 ? $"{header} {body}" : body);
         var fits = whole <= _settings.Budget;
@@ -456,27 +461,25 @@ internal sealed class EmoteSplitterModule : IModule
             Queue(chunks, "through the send hook", ahead, fits);
 
             // It was taken at Enter, so the game never saw the line to put it in its editbox history.
-            if (putBack != null)
-                ChatSender.SaveToHistory(putBack);
+            if (raw != null)
+                ChatSender.SaveToHistory(raw);
 
-            return true;
+            return InputCallbackResult.ClearText;
         }
 
-        // Another plugin's line can't be put back in its box since putBack is null, so; if it fits, it sits -- I mean, it goes unsplit.
-        if (putBack == null && whole <= EmoteSplitterSettings.MaxChunkBytes)
+        // Another plugin's line can't be kept in its box since raw is null, so; if it fits, it sits -- I mean, it goes unsplit.
+        if (raw == null && whole <= EmoteSplitterSettings.MaxChunkBytes)
         {
             Svc.Log.Info($"Sent whole: {reason}");
-            return false;
+            return null;
         }
 
         Refuse(reason!);
-        _refused = putBack;
-        return true;
+        return InputCallbackResult.None;
     }
 
     private void OnFrameworkUpdate(IFramework framework)
     {
-        PutBackRefusedText();
         DropUnconfirmedReply();
         _queue.Update(NowMs);
 
@@ -497,22 +500,6 @@ internal sealed class EmoteSplitterModule : IModule
     }
 
     private int _channelSeen;
-
-    private byte[]? _refused;
-
-    // Taking the Enter clears the box regardless, so a refused message gets put back a frame later.
-    private unsafe void PutBackRefusedText()
-    {
-        if (_refused is not { } text)
-            return;
-
-        _refused = null;
-
-        var input = ChatSender.ChatLogInput();
-        if (input != null)
-            fixed (byte* bytes = text)
-                input->SetText(bytes);
-    }
 
     // Every way a batch can end goes through here, that way the pin and the held item always get released with it.
     private void EndBatch()

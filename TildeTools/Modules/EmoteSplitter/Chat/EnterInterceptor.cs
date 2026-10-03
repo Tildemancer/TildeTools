@@ -19,11 +19,11 @@ internal sealed unsafe class EnterInterceptor : IDisposable
 
     private static EnterInterceptor? _active;
 
-    private readonly Func<string, byte[], bool> _onTake;
+    private readonly Func<string, byte[], InputCallbackResult?> _onTake;
 
     private AtkComponentTextInput* _patched;
 
-    internal EnterInterceptor(Func<string, byte[], bool> onTake)
+    internal EnterInterceptor(Func<string, byte[], InputCallbackResult?> onTake)
     {
         _onTake = onTake;
         _active = this;
@@ -98,13 +98,14 @@ internal sealed unsafe class EnterInterceptor : IDisposable
         {
             // Passes RawString too, null-terminated, because decoding to a string breaks an auto-translated phrase's macro.
             if (type == InputCallbackType.Enter && evaluated != null && self._patched != null
-                && self._onTake(MemoryHelper.ReadStringNullTerminated((nint)evaluated), [.. self._patched->RawString.AsSpan(), 0]))
+                && self._onTake(MemoryHelper.ReadStringNullTerminated((nint)evaluated), [.. self._patched->RawString.AsSpan(), 0]) is { } result)
             {
                 // ClearText doesn't reset the character count.
-                if (AtkComponentTextInput.MemberFunctionPointers.UpdateCharacterCount != null)
+                if (result == InputCallbackResult.ClearText && AtkComponentTextInput.MemberFunctionPointers.UpdateCharacterCount != null)
                     self._patched->UpdateCharacterCount(0, 0);
 
-                return InputCallbackResult.ClearText;
+                // None leaves the line in the box as it was typed, unsent
+                return result;
             }
         }
         catch (Exception ex)
