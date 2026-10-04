@@ -41,9 +41,6 @@ internal static unsafe class ActiveChannel
     internal static int Fingerprint()
     {
         var shell = RaptureShellModule.Instance();
-        if (shell == null)
-            return 0;
-
         HashCode hash = new();
         hash.Add(shell->ChatType);
         hash.Add(shell->TempChatType);
