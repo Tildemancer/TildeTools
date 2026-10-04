@@ -10,6 +10,7 @@ namespace TildeTools.Modules.EmoteSplitter.Chat;
 internal sealed unsafe class InputCapManager : IDisposable
 {
     private readonly EmoteSplitterSettings _settings;
+    private readonly Func<bool> _hooked;
 
     private uint _originalMaxByte;
     private uint _originalMaxChar;
@@ -20,9 +21,10 @@ internal sealed unsafe class InputCapManager : IDisposable
     internal static bool Available =>
         AtkComponentTextInput.MemberFunctionPointers.SetMaxByte != null && AtkComponentTextInput.MemberFunctionPointers.SetMaxChar != null;
 
-    internal InputCapManager(EmoteSplitterSettings settings)
+    internal InputCapManager(EmoteSplitterSettings settings, Func<bool> hooked)
     {
         _settings = settings;
+        _hooked = hooked;
 
         // Should only warn once. "Should".
         if (!Available)
@@ -38,7 +40,8 @@ internal sealed unsafe class InputCapManager : IDisposable
 
     internal void Apply()
     {
-        if (!_settings.UnlockChatInput || !Available)
+        // The limit ONLY goes up once Enter is hooked, or a long line could go out whole.
+        if (!_settings.UnlockChatInput || !Available || !_hooked())
         {
             Restore();
             return;

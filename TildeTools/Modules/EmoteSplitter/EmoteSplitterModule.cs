@@ -75,9 +75,9 @@ internal sealed class EmoteSplitterModule : IModule
         Svc.ClientState.Logout += OnLogout;
         Svc.ClientState.Login += OnLogin;
 
-        _inputCap = new InputCapManager(_settings);
         _submit = new SubmitInterceptor(_settings, (header, body) => OnMessageNeedsSplitting(header, body) != null, OnPlayerLine);
         _enter = new EnterInterceptor(OnEnteredLine);
+        _inputCap = new InputCapManager(_settings, _enter.TryHook);
 
         Svc.Framework.Update += OnFrameworkUpdate;
 
@@ -122,9 +122,9 @@ internal sealed class EmoteSplitterModule : IModule
         Svc.ClientState.Login -= OnLogin;
 
         // Reverse of Enable
+        _inputCap?.Dispose();
         _enter?.Dispose();
         _submit?.Dispose();
-        _inputCap?.Dispose();
 
         (_enter, _submit, _inputCap) = (null, null, null);
         (_replyTo, _droppedAtLogout, _previewed, IsEnabled) = (null, 0, null, false);
