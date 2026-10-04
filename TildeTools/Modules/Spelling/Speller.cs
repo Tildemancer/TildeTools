@@ -308,14 +308,23 @@ internal static class Speller
         bool Completes(string s) => word.Length >= 4 && char.IsUpper(s[0]) && !s.Contains(' ')
             && s.StartsWith(word, StringComparison.OrdinalIgnoreCase);
 
+        // s is the word with two neighboring letters traded, as "Their" is for "Thier"
+        bool Swapped(string s) => s.Length == word.Length && word.AsSpan().CommonPrefixLength(s) is var at && at + 1 < s.Length
+            && char.ToUpperInvariant(s[at]) == char.ToUpperInvariant(word[at + 1]) && char.ToUpperInvariant(s[at + 1]) == char.ToUpperInvariant(word[at])
+            && s.AsSpan(at + 2).Equals(word.AsSpan(at + 2), StringComparison.OrdinalIgnoreCase);
+
         // A name only when it's plainly what's being typed.
         // It must be capitalized, four letters or more into the word, and no dictionary word starts the same way.
         // "Gridan" is Gridania, but "Thes" could be "these"
-        var names = word.Length >= 4 && char.IsUpper(word[0]) && !Starting(_roots, word).Any() ? Starting(_offeredSorted, word).Concat(Starting(_gameSorted, word)).Distinct(StringComparer.OrdinalIgnoreCase).Take(3) : [];
+        var names = word.Length >= 4 && char.IsUpper(word[0]) && !Starting(_roots, word).Any() ? Starting(_offeredSorted, word).Concat(Starting(_gameSorted, word)).Distinct(StringComparer.OrdinalIgnoreCase).Take(1) : [];
+
+        List<string> kept = [.. merged.Where(s => !Dropped(s))];
+
+        // A common word that's a swap leads ahead of the name
+        var swaps = kept.Where(s => Swapped(s) && Common(s));
 
         // The alternate list has no game words added, so it puts a dictionary word before a game one.
-        return [.. names.Concat(merged.Where(s => !Dropped(s))
-                .OrderBy(s => Completes(s) ? In(_alternate, s) ? 0 : 1 : Common(s) ? 2 : 3))
+        return [.. swaps.Concat(names).Concat(kept.OrderBy(s => Completes(s) ? In(_alternate, s) ? 0 : 1 : Common(s) ? 2 : 3))
             .Distinct(StringComparer.OrdinalIgnoreCase)
             .Take(limit)];
     }
