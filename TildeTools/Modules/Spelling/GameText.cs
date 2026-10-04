@@ -66,7 +66,8 @@ internal static class GameText
         Dictionary<string, GameName> origins = new(StringComparer.OrdinalIgnoreCase);
         var (lookup, found) = (seen.GetAlternateLookup<ReadOnlySpan<char>>(), origins.GetAlternateLookup<ReadOnlySpan<char>>());
 
-        foreach (var name in data.Excel.SheetNames)
+        // RacingChocoboName is left out
+        foreach (var name in data.Excel.SheetNames.Where(sheet => sheet != "RacingChocoboName"))
         {
             // Only the first text column is the name, the rest are plurals and titles.
             // When it comes to the character creator's sheet, every column is a name.
