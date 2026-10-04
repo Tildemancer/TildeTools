@@ -382,7 +382,7 @@ internal sealed class EmoteSplitterModule : IModule
             if (!OnPlayerLine(line, saveToHistory: true, payload))
                 return null;
 
-            // Held, so it goes in the history now; sending it later with ProcessChatBoxEntry's history flag crashes the game
+            // Held, so it goes in the history now; sending it later with ProcessChatBoxEntry's history flag crashes the game. Fun!
             ChatSender.SaveToHistory(raw);
             return InputCallbackResult.ClearText;
         }

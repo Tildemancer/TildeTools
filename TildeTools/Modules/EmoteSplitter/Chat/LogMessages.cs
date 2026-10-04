@@ -29,7 +29,7 @@ internal static class LogMessages
     };
 
     // Whether a refusal can be about the message currently posting.
-    // 9743 is theory.
+    // 9743 is theory. Maybe not for much longer after today l m f a o
     internal static bool About(uint id, string current) =>
         ChannelOf(id) is not { } channel || current.Contains(channel) || ChannelCommands.MightShare(current, channel);
 }
