@@ -270,7 +270,7 @@ internal sealed class SettingsTab(EmoteSplitterSettings settings, Action onChang
         var dirty = Toggle("Offer to resend on 'Your message was not heard...'", settings.RetryOnThrottle,
             settings, static (s, v) => s.RetryOnThrottle = v);
 
-        ImGui.TextDisabled("If the game rejects a message, we ask to send it again.");
+        ImGui.TextDisabled($"When that notice comes within {SendQueue.ThrottleClaimWindowMs / 1000} seconds of a part, posting pauses to ask whether to post the part again. Other refusals drop the rest of the message.");
 
         dirty |= Toggle("Post Feedback", settings.ShowProgress, settings, static (s, v) => s.ShowProgress = v);
 
