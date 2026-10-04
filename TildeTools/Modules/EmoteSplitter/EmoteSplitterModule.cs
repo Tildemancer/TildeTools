@@ -38,10 +38,6 @@ internal sealed class EmoteSplitterModule : IModule
 
     public bool IsEnabled { get; private set; }
 
-    public string? UnavailableReason => ChatSender.Available
-        ? null
-        : "The game's chat-send function could not be found for this game version.";
-
     private static long NowMs => Environment.TickCount64;
 
     // Hooked up once, posting window included.

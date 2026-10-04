@@ -17,7 +17,6 @@ internal sealed unsafe class SubmitInterceptor : IDisposable
     private readonly Func<string, bool, bool, bool> _onPlayerLine;
 
     // onSplit, onPlayerLine: true means it took the line.
-    // Built only while ChatSender.Available, see EmoteSplitterModule.UnavailableReason
     internal SubmitInterceptor(EmoteSplitterSettings settings, Func<string, string, bool> onSplit, Func<string, bool, bool, bool> onPlayerLine)
     {
         _settings = settings;

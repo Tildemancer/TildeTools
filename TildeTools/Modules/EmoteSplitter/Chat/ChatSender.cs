@@ -8,14 +8,10 @@ using Lumina.Text.ReadOnly;
 
 namespace TildeTools.Modules.EmoteSplitter.Chat;
 
-// ProcessChatBoxEntry is sig-scanned and can be null post-patch.
-// If called null, it crashes the game. Yikes!
 internal static unsafe class ChatSender
 {
     // Lets our own sends past our send hook.
     [ThreadStatic] internal static bool Passthrough;
-
-    internal static bool Available => UIModule.MemberFunctionPointers.ProcessChatBoxEntry != null;
 
     // C2's <at:group,key> tags arrive as text and get encoded the way C2 would, dropping unknown pairs.
     // ChatTwoModule.EncodeTags, set in Plugin.
@@ -38,8 +34,6 @@ internal static unsafe class ChatSender
     internal static void ReleaseItemLink() => HoldingItemLink = false;
 
     // Framework thread only.
-    // No Available check
-    // Only the send queue calls this, and the module won't enable without it.
     internal static void Send(string line)
     {
         // Only when there's a tag.
