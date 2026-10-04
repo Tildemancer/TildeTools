@@ -233,12 +233,6 @@ internal sealed class EmoteSplitterModule : IModule
         if (requireSplit && !splits)
             return false;
 
-        if (ChannelCommands.HasPayload(line))
-        {
-            reason = PayloadRefusal;
-            return false;
-        }
-
         return splittable && TrySplit(header, body, splits, out chunks, out reason);
     }
 
