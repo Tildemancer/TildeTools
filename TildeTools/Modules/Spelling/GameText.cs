@@ -15,9 +15,6 @@ using Seen = System.Collections.Generic.Dictionary<string, (int Count, int Short
 
 namespace TildeTools.Modules.Spelling;
 
-// Names are considered to be "words the game capitalizes where a capital means something and hardly ever lowercases", and whole names for a phrase looked up.
-internal readonly record struct GameWords(List<string> Words, Dictionary<string, GameName> Names);
-
 internal static class GameText
 {
     // In letters. "gil" is three!
@@ -49,9 +46,10 @@ internal static class GameText
         "Veena forename", "Rava surname", "Veena surname", "Rava female forename", "Rava surname", "Veena name",
     ];
 
+    // Names are considered to be "words the game capitalizes where a capital means something and hardly ever lowercases", and whole names for a phrase looked up.
     // Not through ExcelModule, which keeps every sheet it opens (255 MB for all)
     // Lumina's file cache only holds weak references.
-    internal static GameWords Read(GameData data)
+    internal static (List<string> Words, Dictionary<string, GameName> Names) Read(GameData data)
     {
         // Counted first, so a word's whole name is the one the game uses most: "Wuk Lamat" over "Wuk Evu"
         Dictionary<string, int> uses = new(StringComparer.OrdinalIgnoreCase);
@@ -101,7 +99,7 @@ internal static class GameText
         foreach (var (full, origin) in origins.Where(o => o.Key.Contains(' ')))
             names.TryAdd(full, origin);
 
-        return new(words, names);
+        return (words, names);
     }
 
     // Take: a cell's text, and which of the sheet's text columns that it's in.
