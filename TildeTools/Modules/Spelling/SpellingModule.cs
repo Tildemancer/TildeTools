@@ -2,7 +2,6 @@ using System;
 using System.IO;
 using System.Linq;
 using System.Text.Json;
-using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using Dalamud.Bindings.ImGui;
 using Dalamud.Interface.Utility.Raii;
@@ -12,7 +11,7 @@ using static TildeTools.Ui.Widgets;
 
 namespace TildeTools.Modules.Spelling;
 
-internal sealed partial class SpellingModule(SpellingSettings settings, Action save, WindowSystem windows) : IModule
+internal sealed class SpellingModule(SpellingSettings settings, Action save, WindowSystem windows) : IModule
 {
     // Null while off
     internal SpellIpc? Ipc { get; private set; }
@@ -97,9 +96,6 @@ internal sealed partial class SpellingModule(SpellingSettings settings, Action s
                     if (!settings.CustomWords.Contains(word, StringComparer.OrdinalIgnoreCase))
                         settings.CustomWords.Add(word);
 
-            if (root.TryGetProperty("DictionaryFile", out var file))
-                settings.British = BritishRegex().IsMatch(file.GetString() ?? "");
-
             // WS's 0 is unlimited, so this translates into our highest legal amount.
             if (root.TryGetProperty("MaximumSuggestions", out var most) && most.TryGetInt32(out var count))
                 settings.MaximumSuggestions = count > 0 ? count : SpellingSettings.MostSuggestions;
@@ -118,10 +114,6 @@ internal sealed partial class SpellingModule(SpellingSettings settings, Action s
             save();
         }
     }
-
-    // WS names its dictionary by file so this lets us turn on British spelling by naming 'en_GB.dic'.
-    [GeneratedRegex(@"(?i)\b(?:gb|uk|british|en[_-]?gb)\b")]
-    private static partial Regex BritishRegex();
 
     private void StartLearning()
     {
