@@ -379,12 +379,7 @@ internal sealed class EmoteSplitterModule : IModule
         // Anything not split is a typed line, and the send hook never sees the box's own, so the hold check runs here.
         if (bytes <= _settings.Budget && (payload || !splittable || MessageSplitter.FindBreak(body).At < 0))
         {
-            if (!OnPlayerLine(line, saveToHistory: true, payload))
-                return null;
-
-            // Held, so it goes in the history now; sending it later with ProcessChatBoxEntry's history flag crashes the game. Fun!
-            ChatSender.SaveToHistory(raw);
-            return InputCallbackResult.ClearText;
+            return OnPlayerLine(line, saveToHistory: true, payload) ? InputCallbackResult.ClearText : null;
         }
 
         Svc.Log.Info($"Enter on a line to split: {bytes} bytes, budget {_settings.Budget}.");
@@ -458,11 +453,6 @@ internal sealed class EmoteSplitterModule : IModule
             && (reason = CantWait(chunks, ahead, fits)) == null)
         {
             Queue(chunks, "through the send hook", ahead, fits);
-
-            // It was taken at Enter, so the game never saw the line to put it in its editbox history.
-            if (raw != null)
-                ChatSender.SaveToHistory(raw);
-
             return InputCallbackResult.ClearText;
         }
 
