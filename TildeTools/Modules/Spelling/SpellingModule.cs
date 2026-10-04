@@ -170,6 +170,8 @@ internal sealed partial class SpellingModule(SpellingSettings settings, Action s
         ImGui.TextUnformatted("Define and synonyms");
         ImGui.TextDisabled("Right-click any word in the chat box, Chat 2 or Instant Messenger. Also try it in the preview window of Chat 2!");
 
+        ImGui.TextDisabled("Insert opens the same menu from the keyboard at the caret, in the game's chat box.");
+
         if (Toggle("Look a word up online when the bundled definitions lack it", settings.LookUpOnline, settings, static (s, v) => s.LookUpOnline = v))
             save();
 
