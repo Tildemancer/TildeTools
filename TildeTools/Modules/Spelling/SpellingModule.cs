@@ -191,27 +191,30 @@ internal sealed partial class SpellingModule(SpellingSettings settings, Action s
         if (!list.Success)
             return;
 
-        string? removed = null;
-
         // Only the rows in view! Long word lists and short word lists are identical in performance cost.
         // I love performance
-        ImGuiClip.ClippedDraw(settings.CustomWords, word =>
-        {
-            using var id = ImRaii.PushId(word);
+        ImGuiClip.ClippedDraw(settings.CustomWords, _drawWord ??= DrawWord, 1, ImGui.GetTextLineHeightWithSpacing());
 
-            if (ImGui.SmallButton("x"))
-                removed = word;
-
-            ImGui.SameLine();
-            ImGui.TextUnformatted(word);
-        }, 1, ImGui.GetTextLineHeightWithSpacing());
-
-        if (removed is null)
+        if (_removed is not { } removed)
             return;
 
+        _removed = null;
         _ = settings.CustomWords.Remove(removed);
         Speller.RemoveWord(removed);
         save();
+    }
+
+    private Action<string>? _drawWord;
+    private string? _removed;
+
+    // Kept in _drawWord, a lambda in DrawOwnWords would be remade every frame along with its capture.
+    private void DrawWord(string word)
+    {
+        if (ImGui.SmallButton($"x##{word}"))
+            _removed = word;
+
+        ImGui.SameLine();
+        ImGui.TextUnformatted(word);
     }
 
     private void DrawPlayerNames()

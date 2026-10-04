@@ -39,15 +39,14 @@ internal sealed class SpellMenu(SpellIpc ipc)
 
         if (shown.Synonyms is not null)
         {
-            // A synonym can share a label with a correction.
-            using var synonyms = ImRaii.PushId("synonyms");
             using var indent = ImRaii.PushIndent();
 
             if (shown.Synonyms.Count == 0)
                 ImGui.TextDisabled("None found");
 
+            // A synonym can share a label with a correction.
             foreach (var synonym in shown.Synonyms)
-                if (ImGui.Selectable(synonym))
+                if (ImGui.Selectable($"{synonym}##synonym"))
                 {
                     ipc.Define(synonym, word, replace);
                     return true;
