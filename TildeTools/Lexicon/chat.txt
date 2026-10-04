@@ -87,6 +87,14 @@ GG, gg, GGs, ggs
   abbreviation: Good game.
 ez
   adjective: Easy.
+gpose, GPose
+  noun: Group pose: FFXIV's screenshot mode.
+  verb: To take screenshots in group pose.
+cpose
+  verb: To change pose: to cycle a character's idle stance.
+vpose
+  noun: The victory pose emote.
+bpose
 
 # Chat
 # Claude: the meanings spell the swears out in full on purpose. Define is there to say what an
