@@ -205,24 +205,11 @@ internal sealed class EmoteSplitterModule : IModule
             return SplitTake.Refused;
         }
 
-        // Checked BEFORE the hold below, or our own hold would look like the message being posted holding a link.
         var ahead = CanCutIn;
         if (CantWait(chunks, ahead, fits) is { } wait)
         {
             Refuse(wait);
             return SplitTake.Refused;
-        }
-
-        if (line.Contains("<item>", StringComparison.Ordinal))
-        {
-            if (ChatSender.HoldingItemLink && _queue.State != SendQueueState.Idle)
-            {
-                Refuse("That message links an item while the one still posting links its own, and only one can be held. " +
-                       "Nothing was sent. Send it again once the Emote Splitter window has closed.");
-                return SplitTake.Refused;
-            }
-
-            ChatSender.HoldItemLink();
         }
 
         Queue(chunks, "from another plugin", ahead, fits);
@@ -261,6 +248,10 @@ internal sealed class EmoteSplitterModule : IModule
 
     private const string UnsplittableRefusal =
         "That message is too long for the game and this isn't a recognized channel. Nothing was sent.";
+
+    private const string ItemRefusal =
+        "The split message you just tried to send would try to put the <item> you linked past the first post, " +
+        "which is impossible. Nothing was sent.";
 
     private bool TrySplit(string header, string body, bool splits, out Chunks chunks, out string? reason)
     {
@@ -306,11 +297,16 @@ internal sealed class EmoteSplitterModule : IModule
             return false;
         }
 
-        if (chunks.Count <= _settings.MaxChunksPerMessage)
+        if (chunks.Count > _settings.MaxChunksPerMessage)
+            reason = $"That message needs {chunks.Count} parts, over the limit of {_settings.MaxChunksPerMessage}. " +
+                     "Nothing was sent. Raise the limit in /tt if you meant it.";
+        // <item> is only held for a single post.
+        // The workaround that held it for the later parts wrote into a game struct twice per part and it was ugly so it's gone and those are refused.
+        else if (chunks.Skip(1).Any(chunk => chunk.Line.Contains("<item>", StringComparison.Ordinal)))
+            reason = ItemRefusal;
+        else
             return true;
 
-        reason = $"That message needs {chunks.Count} parts, over the limit of {_settings.MaxChunksPerMessage}. " +
-                 "Nothing was sent. Raise the limit in /tt if you meant it.";
         chunks = [];
         return false;
     }
@@ -332,28 +328,39 @@ internal sealed class EmoteSplitterModule : IModule
             Svc.Chat.Print($"[Emote Splitter] Sending {chunks.Count} parts...");
     }
 
-    // Can't cut in front of a /r, a held item link, or an open question! /r resets its pin on the new message so you'd end up sending all your spicy text to like, IDK, your FC lead or something.
+    // Can't cut in front of a /r or an open question! /r resets its pin on the new message so you'd end up sending all your spicy text to like, IDK, your FC lead or something.
     private bool CanCutIn =>
-        _queue.State != SendQueueState.Asking && !ChatSender.HoldingItemLink && _queue.Underway != ChannelCommands.Reply;
+        _queue.State != SendQueueState.Asking && _queue.Underway != ChannelCommands.Reply;
 
     private string? CantWait(Chunks chunks, bool ahead, bool typed)
     {
-        if (!ChannelCommands.TrySplittable(chunks[0].Line, out var header, out _) || !ReplyPin.IsReplyHeader(header))
+        if (!ChannelCommands.TrySplittable(chunks[0].Line, out var header, out _))
+            return null;
+
+        // Part 1's <item> is filled in as it posts, so it has the usual waits
+        var why = ReplyPin.IsReplyHeader(header) ? ReplyCantWait
+            : chunks[0].Line.Contains("<item>", StringComparison.Ordinal) ? ItemCantWait
+            : null;
+
+        if (why == null)
             return null;
 
         if (!_queue.CanSend())
-            return ReplyCantWait + "for a loading screen or cutscene to end. Nothing was sent. Send it again once it has.";
+            return why + "for a loading screen or cutscene to end. Nothing was sent. Send it again once it has.";
 
         if (chunks[0].Pause > 0)
-            return ReplyCantWait + "out a pause at its start. Nothing was sent. Send it without one.";
+            return why + "out a pause at its start. Nothing was sent. Send it without one.";
 
         return _queue.GoesNext(ChannelCommands.KeyOf(header), ahead, typed)
             ? null
-            : ReplyCantWait + "behind another message. Nothing was sent. Send it again once the Emote Splitter window has closed.";
+            : why + "behind another message. Nothing was sent. Send it again once the Emote Splitter window has closed.";
     }
 
     private const string ReplyCantWait =
         "A reply goes to whoever last sent you a tell when its first part is posted, so it can't wait ";
+
+    private const string ItemCantWait =
+        "The game fills in an item link as its part is posted, so it can't wait ";
 
     internal void Stop() => Svc.Chat.Print($"[Emote Splitter] Stopped; {DropBatch()} part(s) not sent.");
 
@@ -490,11 +497,10 @@ internal sealed class EmoteSplitterModule : IModule
 
     private int _channelSeen;
 
-    // Every way a batch can end goes through here, that way the pin and the held item always get released with it.
+    // Every way a batch can end goes through here, that way the pin always gets released with it.
     private void EndBatch()
     {
         _pin.Reset();
-        ChatSender.ReleaseItemLink();
         _finished = null;
     }
 
