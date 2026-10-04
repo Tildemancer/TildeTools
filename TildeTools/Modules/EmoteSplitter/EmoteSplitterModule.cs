@@ -38,6 +38,13 @@ internal sealed class EmoteSplitterModule : IModule
 
     public bool IsEnabled { get; private set; }
 
+    // Steps aside for either of the main repo candidates.
+    private string? _conflict = IModule.Standalone("Emote Splitter", "EmoteSplitter", "TildeSplitter");
+
+    public string? UnavailableReason => _conflict;
+
+    public void PluginsChanged() => _conflict = IModule.Standalone("Emote Splitter", "EmoteSplitter", "TildeSplitter");
+
     private static long NowMs => Environment.TickCount64;
 
     // Hooked up once, posting window included.

@@ -1,5 +1,4 @@
 using System;
-using System.Linq;
 using System.Numerics;
 using Dalamud.Bindings.ImGui;
 using Dalamud.Game.Command;
@@ -28,17 +27,11 @@ internal abstract class HostedModule<T>(string plugin, string internalName, Acti
     public bool IsEnabled { get; private set; }
 
     // Cached because it's asked every frame, and InstalledPlugins locks and copies Dalamud's list.
-    private string? _conflict = Conflict(plugin, internalName);
+    private string? _conflict = IModule.Standalone(plugin, internalName);
 
     public virtual string? UnavailableReason => _conflict;
 
-    public void PluginsChanged() => _conflict = Conflict(plugin, internalName);
-
-    // Asks Dalamud instead of checking loaded assemblies, since an unloaded plugin's assembly hangs around until it's collected.
-    private static string? Conflict(string plugin, string internalName) =>
-        Svc.Pi.InstalledPlugins.Any(installed => installed.IsLoaded && installed.InternalName == internalName)
-            ? $"{plugin} is installed as its own plugin. Disable it there to run this version!"
-            : null;
+    public void PluginsChanged() => _conflict = IModule.Standalone(plugin, internalName);
 
     public bool StartsOnFirstRun => setup is not { } file || file.HasSettings;
 

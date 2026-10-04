@@ -1,4 +1,5 @@
 using System;
+using System.Linq;
 
 namespace TildeTools.Modules;
 
@@ -19,6 +20,12 @@ internal interface IModule : IDisposable
 
     // For a module that caches its UnavailableReason.
     void PluginsChanged() { }
+
+    // Asks Dalamud instead of checking loaded assemblies, since an unloaded plugin's assembly hangs around until it's collected.
+    static string? Standalone(string plugin, params string[] internalNames) =>
+        Svc.Pi.InstalledPlugins.Any(installed => installed.IsLoaded && internalNames.Contains(installed.InternalName))
+            ? $"{plugin} is installed as its own plugin. Disable it there to run this version!"
+            : null;
 
     bool StartsOnFirstRun => true;
 

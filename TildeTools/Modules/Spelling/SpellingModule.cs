@@ -28,6 +28,13 @@ internal sealed class SpellingModule(SpellingSettings settings, Action save, Win
 
     public bool IsEnabled { get; private set; }
 
+    // Steps aside for either of the main repo candidates.
+    private string? _conflict = IModule.Standalone("Simple Spellcheck", "SimpleSpellcheck", "TildeSpellcheck");
+
+    public string? UnavailableReason => _conflict;
+
+    public void PluginsChanged() => _conflict = IModule.Standalone("Simple Spellcheck", "SimpleSpellcheck", "TildeSpellcheck");
+
     private static string Dictionaries => Path.Combine(Svc.Pi.AssemblyLocation.DirectoryName!, "Dictionaries");
 
     private static string LexiconFolder => Path.Combine(Svc.Pi.AssemblyLocation.DirectoryName!, "Lexicon");
