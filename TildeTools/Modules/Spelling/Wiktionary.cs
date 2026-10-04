@@ -18,6 +18,8 @@ internal static partial class Wiktionary
     static Wiktionary() =>
         Client.DefaultRequestHeaders.UserAgent.ParseAdd($"TildeTools/{typeof(Wiktionary).Assembly.GetName().Version?.ToString(3)} (https://github.com/Tildemancer/TildeTools)");
 
+    internal static void Dispose() => Client.Dispose();
+
     // Page names are case-sensitive, so paris and Paris are two pages and "Callipygian" is a 404.
     internal static async Task<List<Entry>> Define(string word)
     {

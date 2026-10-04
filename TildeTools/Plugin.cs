@@ -131,5 +131,8 @@ public sealed class Plugin : IDalamudPlugin
 
         // Not Save(), which announces on the gates we just disposed.
         Svc.Pi.SavePluginConfig(_config);
+
+        // Here and not in the Spelling module's Disable, since the client is static and the module can be switched back on unlike Simple Spellcheck
+        Wiktionary.Dispose();
     }
 }
