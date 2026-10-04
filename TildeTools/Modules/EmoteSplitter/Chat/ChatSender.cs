@@ -40,7 +40,7 @@ internal static unsafe class ChatSender
     // Framework thread only.
     // No Available check
     // Only the send queue calls this, and the module won't enable without it.
-    internal static void Send(string line, bool saveToHistory)
+    internal static void Send(string line)
     {
         // Only when there's a tag.
         // The first encode builds a list of every tag C2 has.
@@ -75,7 +75,7 @@ internal static unsafe class ChatSender
                 agent->LinkedItem = _heldItem;
 
             Passthrough = true;
-            UIModule.Instance()->ProcessChatBoxEntry(message, 0, saveToHistory);
+            UIModule.Instance()->ProcessChatBoxEntry(message, 0, false);
         }
         finally
         {
