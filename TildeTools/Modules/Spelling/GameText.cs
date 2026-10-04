@@ -175,8 +175,13 @@ internal static class GameText
 
         foreach (var range in span.SplitAny(WordBreaks))
         {
+            // A word right after a slash is a command's name, as in "/gridaniansip", and isn't learned
+            var at = range.Start.GetOffset(span.Length);
+            if (at > 0 && span[at - 1] == '/' && (at == 1 || !char.IsLetterOrDigit(span[at - 2])))
+                continue;
+
             var token = span[range].Trim(Trimmed);
-            var meaningful = label || origin is not null || !OpensSentence(span, range.Start.GetOffset(span.Length));
+            var meaningful = label || origin is not null || !OpensSentence(span, at);
 
             // As WithHalves, only a first half opens a sentence.
             Learn(token, meaningful);

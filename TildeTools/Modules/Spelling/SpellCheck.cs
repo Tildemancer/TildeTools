@@ -73,6 +73,10 @@ internal static class SpellCheck
         if (Trimmed(text, start, end) is not var (index, length) || skipHyphenEnded && index + length < end && text[index + length] == '-')
             return null;
 
+        // A slash right before the word makes it a command, which isn't checked
+        if (index > start && text[index - 1] == '/')
+            return null;
+
         var word = text.Substring(index, length);
 
         // Trimmed drops the dot "e.g." is listed with. I.e, "e.g.". hehehe.
