@@ -32,6 +32,7 @@ internal sealed unsafe class NativeChatSpelling(Func<SpellIpc?> speller)
 
     private byte[] _rawSeen = [];
     private string _textSeen = string.Empty;
+    private bool _payloadSeen;
 
     private string _pendingWord = string.Empty;
 
@@ -228,7 +229,7 @@ internal sealed unsafe class NativeChatSpelling(Func<SpellIpc?> speller)
 
         // The box holds the game's own codes at times: a color code when Tab's auto-translate opens over the menu.
         // Their bytes get eaten by the decode, and GetTextDrawSize reads a broken one's length far past the line.
-        if (ChannelCommands.HasPayload(text))
+        if (_payloadSeen)
             return text;
 
         _node = input->AtkTextNode;
@@ -269,7 +270,7 @@ internal sealed unsafe class NativeChatSpelling(Func<SpellIpc?> speller)
     {
         var raw = input->RawString.AsSpan();
         if (!raw.SequenceEqual(_rawSeen))
-            (_rawSeen, _textSeen) = (raw.ToArray(), input->RawString.ToString());
+            (_rawSeen, _textSeen, _payloadSeen) = (raw.ToArray(), input->RawString.ToString(), ChatSender.HasPayload(raw));
 
         return _textSeen;
     }
@@ -336,7 +337,7 @@ internal sealed unsafe class NativeChatSpelling(Func<SpellIpc?> speller)
     {
         // Tab's auto-translate puts a code in the line, see Mark
         // Replace can't rewrite a line holding one, so the menu closes instead of crashing, which is what it did previously.
-        if (text.Length == 0 || !text.Contains(_pendingWord, StringComparison.Ordinal) || (_menuShowing && ChannelCommands.HasPayload(text)))
+        if (text.Length == 0 || !text.Contains(_pendingWord, StringComparison.Ordinal) || (_menuShowing && _payloadSeen))
         {
             _menuShowing = false;
             _pendingWord = string.Empty;
@@ -424,7 +425,7 @@ internal sealed unsafe class NativeChatSpelling(Func<SpellIpc?> speller)
         var text = TextOf(input);
 
         // A code's bytes don't survive the decode, so SetText would write it back broken.
-        if (ChannelCommands.HasPayload(text))
+        if (_payloadSeen)
             return;
 
         if (at < 0 || at + word.Length > text.Length || string.CompareOrdinal(text, at, word, 0, word.Length) != 0)

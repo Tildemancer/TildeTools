@@ -402,7 +402,7 @@ internal sealed class EmoteSplitterModule : IModule
     }
 
     // Any line the player sends mid-post takes the place of the next scheduled post instead of posting immediately to avoid 'Your message was not heard' nonsense.
-    private bool OnPlayerLine(string line, bool saveToHistory)
+    private bool OnPlayerLine(string line, bool saveToHistory, bool payload)
     {
         if (!ChannelCommands.TrySplittable(line, out var header, out var body))
         {
@@ -432,7 +432,7 @@ internal sealed class EmoteSplitterModule : IModule
         // A link's bytes and an <item> wouldn't survive a later send, so lines with them aren't held.
         // Same with ones the added command pushes past 500 bytes.
         var held = header.Length > 0 ? $"{header} {body}" : body;
-        var canHold = pinned && !ChannelCommands.HasPayload(line)
+        var canHold = pinned && !payload
             && !line.Contains("<item>", StringComparison.Ordinal)
             && Encoding.UTF8.GetByteCount(held) <= EmoteSplitterSettings.MaxChunkBytes;
 
