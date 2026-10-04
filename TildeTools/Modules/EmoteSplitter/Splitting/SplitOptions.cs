@@ -26,4 +26,8 @@ public sealed class SplitOptions
     public string OocOpen { get; set; } = string.Empty;
 
     public string OocClose { get; set; } = string.Empty;
+
+    // Ye olde out-of-range guard against hand-edited configs.
+    internal static string Capped(string? text, int length) =>
+        text is null ? string.Empty : text.Length > length ? text[..length] : text;
 }

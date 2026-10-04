@@ -41,19 +41,23 @@ public sealed class EmoteSplitterSettings
 
     public bool PreferSentenceBreaks { get; set; } = true;
 
-    public string ContinuationPrefix { get; set; } = string.Empty;
+    public const int MaxMarkerLength = 32;
 
-    public string ContinuationSuffix { get; set; } = string.Empty;
+    public string ContinuationPrefix { get; set => field = SplitOptions.Capped(value, MaxMarkerLength); } = string.Empty;
 
-    public string FinalMarker { get; set; } = string.Empty;
+    public string ContinuationSuffix { get; set => field = SplitOptions.Capped(value, MaxMarkerLength); } = string.Empty;
+
+    public string FinalMarker { get; set => field = SplitOptions.Capped(value, MaxMarkerLength); } = string.Empty;
 
     public List<ChunkMarker> Markers { get; set; } = [];
 
     public bool WrapOocPerPart { get; set; } = true;
 
-    public string OocOpen { get; set; } = "((";
+    public const int MaxOocLength = 16;
 
-    public string OocClose { get; set; } = "))";
+    public string OocOpen { get; set => field = SplitOptions.Capped(value, MaxOocLength); } = "((";
+
+    public string OocClose { get; set => field = SplitOptions.Capped(value, MaxOocLength); } = "))";
 
     // A macro's FC lines landed 166.7 ms apart, ten frames at 60 fps.
     // I know that technically this probably means higher framerates can post faster and that lower framerates could post slower but normalizing for 60 seems safe.
