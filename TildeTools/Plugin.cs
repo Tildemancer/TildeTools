@@ -3,7 +3,6 @@ using System.Linq;
 using Dalamud.Game.Command;
 using Dalamud.Interface.Windowing;
 using Dalamud.Plugin;
-using Dalamud.Plugin.Ipc;
 using Lumina.Excel.Sheets;
 using TildeTools.Modules;
 using TildeTools.Modules.ChatTwo;
@@ -32,9 +31,6 @@ public sealed class Plugin : IDalamudPlugin
     private readonly NativeChatSpelling _nativeSpelling;
 
     private readonly WindowSystem _windows = new("TildeTools");
-
-    // Spelling's broadcast that marks are stale. This is the same one that C2 and XIM rely on as well.
-    private readonly ICallGateSubscriber<object?> _availableGate;
 
     public Plugin(IDalamudPluginInterface pluginInterface)
     {
@@ -69,8 +65,6 @@ public sealed class Plugin : IDalamudPlugin
 
         _nativeSpelling = new NativeChatSpelling(() => spelling.Ipc);
 
-        _availableGate = Svc.Pi.GetIpcSubscriber<object?>("TildeTools.Spell.Available");
-        _availableGate.Subscribe(_nativeSpelling.Recheck);
         _windows.AddWindow(_nativeSpelling.Menu);
 
         _ipc = new SplitterIpc(_emoteSplitter, () => chatTwo.InputByteCap);
@@ -124,7 +118,6 @@ public sealed class Plugin : IDalamudPlugin
 
         Svc.Commands.RemoveHandler(CommandName);
 
-        _availableGate.Unsubscribe(_nativeSpelling.Recheck);
         _windows.RemoveAllWindows();
         _ipc?.Dispose();
         _modules.Dispose();

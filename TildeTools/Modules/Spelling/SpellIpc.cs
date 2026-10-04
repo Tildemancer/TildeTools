@@ -170,7 +170,7 @@ internal sealed class SpellIpc : IDisposable
         return marks;
     }
 
-    private Stamp Current => (Speller.Generation, _settings.IgnoreWordsEndingInHyphen, _settings.MaximumSuggestions);
+    internal Stamp Current => (Speller.Generation, _settings.IgnoreWordsEndingInHyphen, _settings.MaximumSuggestions);
 
     private void DropStale<T>(Dictionary<string, T> cache, ref Stamp stamp, int most)
     {

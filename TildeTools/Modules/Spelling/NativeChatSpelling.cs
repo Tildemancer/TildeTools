@@ -23,6 +23,7 @@ internal sealed unsafe class NativeChatSpelling(Func<SpellIpc?> speller)
     private const float Thickness = 1.5f;
 
     private string _lastText = string.Empty;
+    private (int, bool, int) _lastStamp;
     private List<(int Start, int Length)> _lastMarks = [];
 
     private readonly List<(float Left, float Right, float Top, float Bottom, int Start, int Length)> _drawn = [];
@@ -410,9 +411,6 @@ internal sealed unsafe class NativeChatSpelling(Func<SpellIpc?> speller)
 
     private void Forget() => (_menuShowing, _pendingWord) = (false, string.Empty);
 
-    // Redows the marks and only the marks, doesn't call Forget so a name learned with the menu open doesn't close it.
-    internal void Recheck() => _lastText = string.Empty;
-
     // Rewrites the whole line because the component can't replace a range.
     // Read fresh, since the text the menu opened on would put back anything deleted after.
     // I HATE this game's native UI elements!
@@ -532,8 +530,10 @@ internal sealed unsafe class NativeChatSpelling(Func<SpellIpc?> speller)
 
     private List<(int Start, int Length)> Check(string text)
     {
-        if (text != _lastText)
-            (_lastText, _lastMarks) = (text, speller()?.Marks(text) ?? []);
+        // `Current` changes with the dictionary's generation and the Skip words and Corrections settings, or anything ignored.
+        var stamp = speller()?.Current ?? default;
+        if (text != _lastText || stamp != _lastStamp)
+            (_lastText, _lastStamp, _lastMarks) = (text, stamp, speller()?.Marks(text) ?? []);
 
         return _lastMarks;
     }
