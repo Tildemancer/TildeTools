@@ -83,7 +83,6 @@ internal static class Credits
 
         foreach (var (name, what, url) in Libraries)
         {
-            using var id = ImRaii.PushId(name);
             ImGui.Bullet();
             ImGui.SameLine();
 

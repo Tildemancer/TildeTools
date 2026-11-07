@@ -66,7 +66,6 @@ internal sealed class MainWindow : Window
             if (!tab.Success)
                 continue;
 
-            using var id = ImRaii.PushId(module.Id);
             module.DrawTab();
 
             if (module.TakeCloseRequest())
@@ -95,8 +94,6 @@ internal sealed class MainWindow : Window
 
         foreach (var module in _modules.Modules)
         {
-            using var id = ImRaii.PushId(module.Id);
-
             var enabled = module.IsEnabled;
 
             // On the next tick, NOT mid-draw, or a plugin stopped here would still get this frame's Draw after its Dispose.
